@@ -12,7 +12,7 @@ namespace CharacterGen5th.Controllers
         {
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
 
-            return View();
+            return View("StatsInput");
         }
 
         public ActionResult About()
