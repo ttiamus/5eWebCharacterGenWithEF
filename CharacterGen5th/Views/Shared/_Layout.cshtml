@@ -5,7 +5,7 @@
         <title>@ViewBag.Title - My ASP.NET MVC Application</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
-        <!--@Styles.Render("~/Content/css")-->
+        @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
     </head>
     <body>
@@ -20,9 +20,12 @@
                     </section>
                     <nav>
                         <ul id="menu">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            <li>@Html.ActionLink("Home", "Index", "CharacterGen")</li>
+                            <li>@Html.ActionLink("Stats", "StatsInput", "CharacterGen")</li>
+                            <li>@Html.ActionLink("Class", "Class", "CharacterGen")</li>
+                            <li>@Html.ActionLink("Class Options", "ClassOptions", "CharacterGen")</li>
+                            <li>@Html.ActionLink("Skills", "Skills", "CharacterGen")</li>
+                            <li>@Html.ActionLink("Items", "Items", "CharacterGen")</li>
                         </ul>
                     </nav>
                 </div>
@@ -34,6 +37,7 @@
                 @RenderBody()
             </section>
         </div>
+        <!--
         <footer>
             <div class="content-wrapper">
                 <div class="float-left">
@@ -41,7 +45,8 @@
                 </div>
             </div>
         </footer>
-
+        -->
+        
         @Scripts.Render("~/bundles/jquery")
         @RenderSection("scripts", required: false)
     </body>
