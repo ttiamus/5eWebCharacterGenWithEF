@@ -1,5 +1,41 @@
-﻿@{
+﻿@model IEnumerable<CharacterGen5th.Models.Item>
+
+@{
     ViewBag.Title = "Items";
 }
 
-<h2>Items</h2>
+<span>
+    <label>Total Wealth</label><label>0000</label>
+</span>
+
+<table>
+
+    <tr>
+        <th></th>
+        <th>Quantity</th>
+        <th>Item</th>
+        <th>Weight</th>
+        <th>Cost</th>
+    </tr>
+
+    @for (var i = 1; i <= 20; i++)
+    {
+        <tr>
+            <td>@i</td>
+            <td><input type="text" /></td>
+            <td>
+                <select>
+                    @foreach (var item in Model)
+                    {Html.Partial()
+                        <option>@Html.DisplayFor(model => item.Name)</option>
+                    }
+
+                </select>
+            </td>
+
+            <td>0</td>
+            <td>0</td>
+            
+        </tr>
+    }
+</table>

@@ -1,5 +1,35 @@
-﻿@{
+﻿@model IEnumerable<CharacterGen5th.Models.Class>
+
+@{
     ViewBag.Title = "Class";
 }
 
-<h2>Class</h2>
+<table>
+
+    <tr>
+        <th>Level</th>
+        <th>Class</th>
+        <th>Hit Die</th>
+        <th>Hit Points</th>
+    </tr>
+
+    @for (var i = 1; i <= 20; i++)
+    {
+        <tr>
+            <td>@i</td>
+            
+            <td>
+                <select>
+                    @foreach (var className in Model)
+                    {
+                        <option value="@className.Class1">@className.Class1</option>
+                    }
+
+                </select>
+            </td>
+
+            <td>d10</td>
+            <td>@Html.TextBox("hitPointsForLevel" + @i)</td>
+        </tr>
+    }
+</table>
