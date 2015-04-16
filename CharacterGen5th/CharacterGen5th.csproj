@@ -193,9 +193,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201504150208372_InitialDatabaseSetup4-14-2015.cs" />
-    <Compile Include="Migrations\201504150208372_InitialDatabaseSetup4-14-2015.Designer.cs">
-      <DependentUpon>201504150208372_InitialDatabaseSetup4-14-2015.cs</DependentUpon>
+    <Compile Include="Migrations\201504160328169_InitialDatabaseSetup.cs" />
+    <Compile Include="Migrations\201504160328169_InitialDatabaseSetup.Designer.cs">
+      <DependentUpon>201504160328169_InitialDatabaseSetup.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AbilityScoreModel.cs" />
@@ -342,8 +342,8 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201504150208372_InitialDatabaseSetup4-14-2015.resx">
-      <DependentUpon>201504150208372_InitialDatabaseSetup4-14-2015.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201504160328169_InitialDatabaseSetup.resx">
+      <DependentUpon>201504160328169_InitialDatabaseSetup.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
