@@ -4,13 +4,23 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CharacterGen5th.Models;
+using CharacterGen5th.Unity;
+using CharacterGen5th.Repositories;
 
 
 //Look into using Partail Views to render the webpages server side then pushing to web page. Replaces using razor and loops in the main view.
 namespace CharacterGen5th.Controllers
 {
     public class CharacterGenController : Controller
-    {        
+    {
+        //Declare IRepositories here as private variables
+
+        public CharacterGenController()
+        {
+            //Initialize IRepositories here
+        }
+
+
         //
         // GET: /CharacterGen/
         public ActionResult Index()

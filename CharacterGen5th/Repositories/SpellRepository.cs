@@ -1,0 +1,43 @@
+﻿using CharacterGen5th.Models;
+using CharacterGen5th.Unity;
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Web;
+
+namespace CharacterGen5th.Repositories
+{
+    public class SpellRepository : AbstractRepository, ISpellRepository
+    {
+        public SpellRepository(CharGenContext context) : base(context)
+        {
+        }
+
+        public IEnumerable<Spell> GetSpells()
+        {
+            return this.context.Spells.ToList();
+        }
+
+        public void CreateSpell(Spell newSpell)
+        {
+            this.context.Spells.Add(newSpell);
+        }
+
+        public Spell FindSpellById(int id)
+        {
+            return this.context.Spells.Find(id);
+        }
+
+        public void UpdateSpell(Spell toUpdate)
+        {
+            this.context.Entry(toUpdate).State = EntityState.Modified;
+        }
+
+        public void DeleteSpell(int id)
+        {
+            var toDelete = this.context.Spells.Find(id);
+            this.context.Spells.Remove(toDelete);
+        }
+    }
+}
