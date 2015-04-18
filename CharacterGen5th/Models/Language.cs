@@ -18,11 +18,15 @@ namespace CharacterGen5th.Models
         public string Name { get; set; }
 
         [ForeignKey("Race_Id")]
-        public virtual Language Race { get; set; }
-        public int Race_Id { get; set; }
+        public virtual Race Race { get; set; }
+        public int? Race_Id { get; set; }
 
         [ForeignKey("Background_Id")]
         public virtual Background Background { get; set; }
-        public int Background_Id { get; set; }
+        public int? Background_Id { get; set; }
+
+        [ForeignKey("Character_Id")]
+        public virtual Character Character { get; set; }
+        public int? Character_Id { get; set; }
     }
 }

@@ -208,6 +208,10 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Bootstraper\Models\IAlignmentRepository.cs" />
+    <Compile Include="Bootstraper\Models\ICharacterRepository.cs" />
+    <Compile Include="Bootstraper\Services\ICharacterBuilderService.cs" />
+    <Compile Include="Bootstraper\Services\IDataRetrievalService.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CharacterGenController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -218,11 +222,21 @@
     <Compile Include="Migrations\201504170350113_InitialSetup.Designer.cs">
       <DependentUpon>201504170350113_InitialSetup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504172135401_AddedCharacterModel.cs" />
+    <Compile Include="Migrations\201504172135401_AddedCharacterModel.Designer.cs">
+      <DependentUpon>201504172135401_AddedCharacterModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504180146166_AddedForeignKeysForCharacterRaceAndBackground.cs" />
+    <Compile Include="Migrations\201504180146166_AddedForeignKeysForCharacterRaceAndBackground.Designer.cs">
+      <DependentUpon>201504180146166_AddedForeignKeysForCharacterRaceAndBackground.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AbilityScore.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Alignment.cs" />
     <Compile Include="Models\Armor.cs" />
     <Compile Include="Models\Background.cs" />
+    <Compile Include="Models\Character.cs" />
     <Compile Include="Models\CharGenContext.cs" />
     <Compile Include="Models\Class.cs" />
     <Compile Include="Models\Feat.cs" />
@@ -237,8 +251,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AbilityScoreRepository.cs" />
     <Compile Include="Repositories\AbstractRepository.cs" />
+    <Compile Include="Repositories\AlignmentRepository.cs" />
     <Compile Include="Repositories\ArmorRepository.cs" />
     <Compile Include="Repositories\BackgroundRepository.cs" />
+    <Compile Include="Repositories\CharacterRepository.cs" />
     <Compile Include="Repositories\ClassRepository.cs" />
     <Compile Include="Repositories\FeatRepository.cs" />
     <Compile Include="Repositories\ItemRepository.cs" />
@@ -249,19 +265,21 @@
     <Compile Include="Repositories\SpellRepository.cs" />
     <Compile Include="Repositories\WeaponPropertyRepository.cs" />
     <Compile Include="Repositories\WeaponRepository.cs" />
-    <Compile Include="Bootstraper\IAbilityScoreRepository.cs" />
-    <Compile Include="Bootstraper\IArmorRepository.cs" />
-    <Compile Include="Bootstraper\IBackgroundRepository.cs" />
-    <Compile Include="Bootstraper\IClassRepository.cs" />
-    <Compile Include="Bootstraper\IFeatRepository.cs" />
-    <Compile Include="Bootstraper\IItemRepository.cs" />
-    <Compile Include="Bootstraper\ILanguageRepository.cs" />
-    <Compile Include="Bootstraper\IRaceRepository.cs" />
-    <Compile Include="Bootstraper\ISizeRepository.cs" />
-    <Compile Include="Bootstraper\ISkillRepository.cs" />
-    <Compile Include="Bootstraper\ISpellRepository.cs" />
-    <Compile Include="Bootstraper\IWeaponPropertyRepository.cs" />
-    <Compile Include="Bootstraper\IWeaponRepository.cs" />
+    <Compile Include="Bootstraper\Models\IAbilityScoreRepository.cs" />
+    <Compile Include="Bootstraper\Models\IArmorRepository.cs" />
+    <Compile Include="Bootstraper\Models\IBackgroundRepository.cs" />
+    <Compile Include="Bootstraper\Models\IClassRepository.cs" />
+    <Compile Include="Bootstraper\Models\IFeatRepository.cs" />
+    <Compile Include="Bootstraper\Models\IItemRepository.cs" />
+    <Compile Include="Bootstraper\Models\ILanguageRepository.cs" />
+    <Compile Include="Bootstraper\Models\IRaceRepository.cs" />
+    <Compile Include="Bootstraper\Models\ISizeRepository.cs" />
+    <Compile Include="Bootstraper\Models\ISkillRepository.cs" />
+    <Compile Include="Bootstraper\Models\ISpellRepository.cs" />
+    <Compile Include="Bootstraper\Models\IWeaponPropertyRepository.cs" />
+    <Compile Include="Bootstraper\Models\IWeaponRepository.cs" />
+    <Compile Include="Services\CharacterBuilderService.cs" />
+    <Compile Include="Services\DataRetrievalService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Database1.mdf" />
@@ -393,7 +411,14 @@
     <EmbeddedResource Include="Migrations\201504170350113_InitialSetup.resx">
       <DependentUpon>201504170350113_InitialSetup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504172135401_AddedCharacterModel.resx">
+      <DependentUpon>201504172135401_AddedCharacterModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504180146166_AddedForeignKeysForCharacterRaceAndBackground.resx">
+      <DependentUpon>201504180146166_AddedForeignKeysForCharacterRaceAndBackground.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

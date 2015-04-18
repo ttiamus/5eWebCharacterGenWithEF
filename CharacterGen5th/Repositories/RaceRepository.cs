@@ -1,5 +1,5 @@
 ﻿using CharacterGen5th.Models;
-using CharacterGen5th.Unity;
+using CharacterGen5th.Bootstraper;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -19,9 +19,9 @@ namespace CharacterGen5th.Repositories
             return this.context.Races.ToList();
         }
 
-        public void CreateRace(Race newSizes)
+        public void CreateRace(Race newRace)
         {
-            this.context.Races.Add(newSizes);
+            this.context.Races.Add(newRace);
         }
 
         public Race FindRaceById(int id)

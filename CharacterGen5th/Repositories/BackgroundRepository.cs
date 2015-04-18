@@ -1,5 +1,5 @@
 ﻿using CharacterGen5th.Models;
-using CharacterGen5th.Unity;
+using CharacterGen5th.Bootstraper;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -19,9 +19,9 @@ namespace CharacterGen5th.Repositories
             return this.context.Backgrounds.ToList();
         }
 
-        public void CreateBackground(Background newSizes)
+        public void CreateBackground(Background newBackground)
         {
-            this.context.Backgrounds.Add(newSizes);
+            this.context.Backgrounds.Add(newBackground);
         }
 
         public Background FindBackgroundById(int id)

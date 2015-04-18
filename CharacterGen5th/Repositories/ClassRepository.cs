@@ -1,5 +1,5 @@
 ﻿using CharacterGen5th.Models;
-using CharacterGen5th.Unity;
+using CharacterGen5th.Bootstraper;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -19,9 +19,9 @@ namespace CharacterGen5th.Repositories
             return this.context.Classes.ToList();
         }
 
-        public void CreateFeat(Class newSizes)
+        public void CreateFeat(Class newClass)
         {
-            this.context.Classes.Add(newSizes);
+            this.context.Classes.Add(newClass);
         }
 
         public Class FindFeatById(int id)

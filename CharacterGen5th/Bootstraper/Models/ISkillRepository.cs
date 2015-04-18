@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace CharacterGen5th.Unity
+namespace CharacterGen5th.Bootstraper
 {
     public interface ISkillRepository
     {
         IEnumerable<Skill> GetSkills();
 
-        void CreateSkill(Skill newAbilityScore);
+        void CreateSkill(Skill newSkill);
 
         Skill FindSkillById(int id);
 

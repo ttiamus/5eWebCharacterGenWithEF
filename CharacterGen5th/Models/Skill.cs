@@ -20,10 +20,10 @@ namespace CharacterGen5th.Models
         [Required]
         [ForeignKey("AbilityScore_Id")]
         public AbilityScore AbilityScore { get; set; }
-        public int AbilityScore_Id { get; set; }
+        public int? AbilityScore_Id { get; set; }
 
         [ForeignKey("Background_Id")]
         public virtual Background Background { get; set; }
-        public int Background_Id { get; set; }
+        public int? Background_Id { get; set; }
     }
 }

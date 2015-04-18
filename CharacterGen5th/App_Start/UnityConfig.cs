@@ -1,8 +1,8 @@
 using System;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
-using CharacterGen5th.Unity;
 using CharacterGen5th.Repositories;
+using CharacterGen5th.Bootstraper;
 
 namespace CharacterGen5th.App_Start
 {
@@ -38,8 +38,10 @@ namespace CharacterGen5th.App_Start
             // container.LoadConfiguration();
 
             container.RegisterType<IAbilityScoreRepository, AbilityScoreRepository>();
+            container.RegisterType<IAlignmentRepository, AlignmentRepository>();
             container.RegisterType<IArmorRepository, ArmorRepository>();
             container.RegisterType<IBackgroundRepository, BackgroundRepository>();
+            container.RegisterType<ICharacterRepository, CharacterRepository>();
             container.RegisterType<IClassRepository, ClassRepository>();
             container.RegisterType<IFeatRepository, FeatRepository>();
             container.RegisterType<IItemRepository, ItemRepository>();

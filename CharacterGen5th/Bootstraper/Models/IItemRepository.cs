@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CharacterGen5th.Unity
+namespace CharacterGen5th.Bootstraper
 {
     interface IItemRepository
     {
         IEnumerable<Item> GetItems();
 
-        void CreateItem(Item newSizes);
+        void CreateItem(Item newItem);
 
         Item FindItemById(int id);
 

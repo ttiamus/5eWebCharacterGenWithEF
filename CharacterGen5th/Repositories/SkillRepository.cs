@@ -1,5 +1,5 @@
 ﻿using CharacterGen5th.Models;
-using CharacterGen5th.Unity;
+using CharacterGen5th.Bootstraper;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -19,9 +19,9 @@ namespace CharacterGen5th.Repositories
             return this.context.Skills.ToList();
         }
 
-        public void CreateSkill(Skill newAbilityScore)
+        public void CreateSkill(Skill newSkill)
         {
-            this.context.Skills.Add(newAbilityScore);
+            this.context.Skills.Add(newSkill);
         }
 
         public Skill FindSkillById(int id)

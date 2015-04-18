@@ -19,10 +19,10 @@ namespace CharacterGen5th.Models
 
         [ForeignKey("Race_Id")]
         public virtual Race Race { get; set; }
-        public int Race_Id { get; set; }
+        public int? Race_Id { get; set; }
 
         [ForeignKey("Skill_Id")]
         public virtual Skill Skill { get; set; }
-        public int Skill_Id { get; set; }
+        public int? Skill_Id { get; set; }
     }
 }

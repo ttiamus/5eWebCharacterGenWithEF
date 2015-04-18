@@ -19,5 +19,9 @@ namespace CharacterGen5th.Models
 
         [Required()]
         public string Description { get; set; }
+
+        [ForeignKey("Weapon_Id")]
+        public virtual Weapon Weapon { get; set; }
+        public int? Weapon_Id { get; set; }
     }
 }

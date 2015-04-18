@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CharacterGen5th.Unity
+namespace CharacterGen5th.Bootstraper
 {
     interface IRaceRepository
     {
         IEnumerable<Race> GetRaces();
 
-        void CreateRace(Race newSizes);
+        void CreateRace(Race newRace);
 
         Race FindRaceById(int id);
 

@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CharacterGen5th.Unity
+namespace CharacterGen5th.Bootstraper
 {
     interface IBackgroundRepository
     {
         IEnumerable<Background> GetBackgrounds();
 
-        void CreateBackground(Background newSizes);
+        void CreateBackground(Background newBackground);
 
         Background FindBackgroundById(int id);
 

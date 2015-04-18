@@ -26,7 +26,7 @@ namespace CharacterGen5th.Models
         [Required()]
         [ForeignKey("Size_Id")]
         public Size Size { get; set; }
-        public int Size_Id { get; set; }
+        public int? Size_Id { get; set; }
 
         [Required()]
         public int Speed { get; set; }

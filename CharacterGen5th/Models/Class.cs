@@ -37,6 +37,10 @@ namespace CharacterGen5th.Models
 
         [ForeignKey("Spell_Id")]
         public virtual Spell Spell { get; set; }
-        public int Spell_Id { get; set; }
+        public int? Spell_Id { get; set; }
+
+        [ForeignKey("Character_Id")]
+        public virtual Character Character { get; set; }
+        public int? Character_Id { get; set; }
     }
 }

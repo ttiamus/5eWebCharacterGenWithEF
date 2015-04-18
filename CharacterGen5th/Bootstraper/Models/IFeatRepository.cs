@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CharacterGen5th.Unity
+namespace CharacterGen5th.Bootstraper
 {
     interface IFeatRepository
     {
         IEnumerable<Feat> GetFeats();
 
-        void CreateFeat(Feat newSizes);
+        void CreateFeat(Feat newFeat);
 
         Feat FindFeatById(int id);
 

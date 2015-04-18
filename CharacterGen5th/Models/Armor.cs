@@ -40,6 +40,6 @@ namespace CharacterGen5th.Models
 
         [ForeignKey("Class_Id")]
         public virtual Class Class { get; set; }
-        public int Class_Id { get; set; }
+        public int? Class_Id { get; set; }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using CharacterGen5th.Models;
-using CharacterGen5th.Unity;
+using CharacterGen5th.Bootstraper;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -19,9 +19,9 @@ namespace CharacterGen5th.Repositories
             return this.context.Items.ToList();
         }
 
-        public void CreateItem(Item newSizes)
+        public void CreateItem(Item newItem)
         {
-            this.context.Items.Add(newSizes);
+            this.context.Items.Add(newItem);
         }
 
         public Item FindItemById(int id)
