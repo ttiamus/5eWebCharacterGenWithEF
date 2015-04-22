@@ -1,5 +1,5 @@
 ﻿using CharacterGen5th.Models;
-using CharacterGen5th.Bootstraper;
+using CharacterGen5th.Bootstraper.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -22,6 +22,7 @@ namespace CharacterGen5th.Repositories
         public void CreateSpell(Spell newSpell)
         {
             this.context.Spells.Add(newSpell);
+            this.context.SaveChanges();
         }
 
         public Spell FindSpellById(int id)
@@ -32,12 +33,14 @@ namespace CharacterGen5th.Repositories
         public void UpdateSpell(Spell toUpdate)
         {
             this.context.Entry(toUpdate).State = EntityState.Modified;
+            this.context.SaveChanges();
         }
 
         public void DeleteSpell(int id)
         {
             var toDelete = this.context.Spells.Find(id);
             this.context.Spells.Remove(toDelete);
+            this.context.SaveChanges();
         }
     }
 }

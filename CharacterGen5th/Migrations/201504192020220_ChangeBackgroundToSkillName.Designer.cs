@@ -7,13 +7,13 @@ namespace CharacterGen5th.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddedForeignKeysForCharacterRaceAndBackground : IMigrationMetadata
+    public sealed partial class ChangeBackgroundToSkillName : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedForeignKeysForCharacterRaceAndBackground));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangeBackgroundToSkillName));
         
         string IMigrationMetadata.Id
         {
-            get { return "201504180146166_AddedForeignKeysForCharacterRaceAndBackground"; }
+            get { return "201504192020220_ChangeBackgroundToSkillName"; }
         }
         
         string IMigrationMetadata.Source

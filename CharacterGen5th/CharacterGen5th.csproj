@@ -208,8 +208,18 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Bootstraper\Models\IBackgroundToItemMappingRepository.cs" />
+    <Compile Include="Bootstraper\Models\IBackgroundToLanguageMappingRepository.cs" />
+    <Compile Include="Bootstraper\Models\IBackgroundToSkillMappingRepository.cs" />
+    <Compile Include="Bootstraper\Models\IClassToArmorMappingRepository.cs" />
+    <Compile Include="Bootstraper\Models\IClassToSpellMappingRepository.cs" />
+    <Compile Include="Bootstraper\Models\IClassToWeaponMappingRepository.cs" />
+    <Compile Include="Bootstraper\Models\IRaceToAbilityScoreMappingRepository.cs" />
+    <Compile Include="Bootstraper\Models\IRaceToLanguageMappingRepository.cs" />
+    <Compile Include="Bootstraper\Models\IRaceToRacePropertyMappingRepository.cs" />
     <Compile Include="Bootstraper\Models\IAlignmentRepository.cs" />
     <Compile Include="Bootstraper\Models\ICharacterRepository.cs" />
+    <Compile Include="Bootstraper\Models\IRacePropertyRepository.cs" />
     <Compile Include="Bootstraper\Services\ICharacterBuilderService.cs" />
     <Compile Include="Bootstraper\Services\IDataRetrievalService.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -218,17 +228,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201504170350113_InitialSetup.cs" />
-    <Compile Include="Migrations\201504170350113_InitialSetup.Designer.cs">
-      <DependentUpon>201504170350113_InitialSetup.cs</DependentUpon>
+    <Compile Include="Migrations\201504192019128_InitalSetupWithSplitForeignKeys.cs" />
+    <Compile Include="Migrations\201504192019128_InitalSetupWithSplitForeignKeys.Designer.cs">
+      <DependentUpon>201504192019128_InitalSetupWithSplitForeignKeys.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201504172135401_AddedCharacterModel.cs" />
-    <Compile Include="Migrations\201504172135401_AddedCharacterModel.Designer.cs">
-      <DependentUpon>201504172135401_AddedCharacterModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201504180146166_AddedForeignKeysForCharacterRaceAndBackground.cs" />
-    <Compile Include="Migrations\201504180146166_AddedForeignKeysForCharacterRaceAndBackground.Designer.cs">
-      <DependentUpon>201504180146166_AddedForeignKeysForCharacterRaceAndBackground.cs</DependentUpon>
+    <Compile Include="Migrations\201504192020220_ChangeBackgroundToSkillName.cs" />
+    <Compile Include="Migrations\201504192020220_ChangeBackgroundToSkillName.Designer.cs">
+      <DependentUpon>201504192020220_ChangeBackgroundToSkillName.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AbilityScore.cs" />
@@ -236,30 +242,51 @@
     <Compile Include="Models\Alignment.cs" />
     <Compile Include="Models\Armor.cs" />
     <Compile Include="Models\Background.cs" />
+    <Compile Include="Models\BackgroundToItemMap.cs" />
+    <Compile Include="Models\BackgroundToLanguageMap.cs" />
     <Compile Include="Models\Character.cs" />
     <Compile Include="Models\CharGenContext.cs" />
     <Compile Include="Models\Class.cs" />
+    <Compile Include="Models\ClassToArmorMap.cs" />
+    <Compile Include="Models\ClassToSpellMap.cs" />
+    <Compile Include="Models\ClassToWeaponMap.cs" />
     <Compile Include="Models\Feat.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Language.cs" />
+    <Compile Include="Models\BackgroundToSkillMap.cs" />
     <Compile Include="Models\Race.cs" />
+    <Compile Include="Models\RaceProperty.cs" />
+    <Compile Include="Models\RaceToAbililtyScoreMap.cs" />
+    <Compile Include="Models\RaceToLanguagesMap.cs" />
+    <Compile Include="Models\RaceToRacePropertyMap.cs" />
     <Compile Include="Models\Size.cs" />
     <Compile Include="Models\Skill.cs" />
     <Compile Include="Models\Spell.cs" />
     <Compile Include="Models\Weapon.cs" />
     <Compile Include="Models\WeaponProperty.cs" />
+    <Compile Include="Models\WeaponToWeaponPropertyMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AbilityScoreRepository.cs" />
     <Compile Include="Repositories\AbstractRepository.cs" />
     <Compile Include="Repositories\AlignmentRepository.cs" />
     <Compile Include="Repositories\ArmorRepository.cs" />
     <Compile Include="Repositories\BackgroundRepository.cs" />
+    <Compile Include="Repositories\BackgroundToItemMappingRepository.cs" />
+    <Compile Include="Repositories\BackgroundToLanguageMappingRepository.cs" />
+    <Compile Include="Repositories\BackgroundToSkillMappingRepository.cs" />
     <Compile Include="Repositories\CharacterRepository.cs" />
     <Compile Include="Repositories\ClassRepository.cs" />
+    <Compile Include="Repositories\ClassToArmorMappingRepository.cs" />
+    <Compile Include="Repositories\ClassToSpellMappingRepository.cs" />
+    <Compile Include="Repositories\ClassToWeaponMappingRepository.cs" />
     <Compile Include="Repositories\FeatRepository.cs" />
     <Compile Include="Repositories\ItemRepository.cs" />
     <Compile Include="Repositories\LanguageRepository.cs" />
+    <Compile Include="Repositories\RacePropertyRepository.cs" />
     <Compile Include="Repositories\RaceRepository.cs" />
+    <Compile Include="Repositories\RaceToAbilityScoreMappingRepository.cs" />
+    <Compile Include="Repositories\RaceToLanguageMappingRepository.cs" />
+    <Compile Include="Repositories\RaceToRacePropertyMappingRepository.cs" />
     <Compile Include="Repositories\SizeRepository.cs" />
     <Compile Include="Repositories\SkillRepository.cs" />
     <Compile Include="Repositories\SpellRepository.cs" />
@@ -358,6 +385,14 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="SQL Seed Scripts\Insert Ability Scores Procedure.sql" />
+    <Content Include="SQL Seed Scripts\Insert Alignments Proceedure.sql" />
+    <Content Include="SQL Seed Scripts\Insert Languages Procedure.sql" />
+    <Content Include="SQL Seed Scripts\Insert Race Properties.sql" />
+    <Content Include="SQL Seed Scripts\Insert Races Procedure.sql" />
+    <Content Include="SQL Seed Scripts\Insert Sizes Procedure.sql" />
+    <Content Include="SQL Seed Scripts\InsertItemsProcedure.sql" />
+    <Content Include="SQL Seed Scripts\Seed Database Procedure.sql" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -408,17 +443,13 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201504170350113_InitialSetup.resx">
-      <DependentUpon>201504170350113_InitialSetup.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201504192019128_InitalSetupWithSplitForeignKeys.resx">
+      <DependentUpon>201504192019128_InitalSetupWithSplitForeignKeys.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201504172135401_AddedCharacterModel.resx">
-      <DependentUpon>201504172135401_AddedCharacterModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201504180146166_AddedForeignKeysForCharacterRaceAndBackground.resx">
-      <DependentUpon>201504180146166_AddedForeignKeysForCharacterRaceAndBackground.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201504192020220_ChangeBackgroundToSkillName.resx">
+      <DependentUpon>201504192020220_ChangeBackgroundToSkillName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

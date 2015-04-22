@@ -1,5 +1,5 @@
 ﻿using CharacterGen5th.Models;
-using CharacterGen5th.Bootstraper;
+using CharacterGen5th.Bootstraper.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -22,6 +22,7 @@ namespace CharacterGen5th.Repositories
         public void CreateRace(Race newRace)
         {
             this.context.Races.Add(newRace);
+            this.context.SaveChanges();
         }
 
         public Race FindRaceById(int id)
@@ -32,12 +33,14 @@ namespace CharacterGen5th.Repositories
         public void UpdateRace(Race toUpdate)
         {
             this.context.Entry(toUpdate).State = EntityState.Modified;
+            this.context.SaveChanges();
         }
 
         public void DeleteRace(int id)
         {
             var toDelete = context.Races.Find(id);
             this.context.Races.Remove(toDelete);
+            this.context.SaveChanges();
         }
     }
 }

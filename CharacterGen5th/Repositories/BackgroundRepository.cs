@@ -1,5 +1,5 @@
 ﻿using CharacterGen5th.Models;
-using CharacterGen5th.Bootstraper;
+using CharacterGen5th.Bootstraper.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -22,6 +22,7 @@ namespace CharacterGen5th.Repositories
         public void CreateBackground(Background newBackground)
         {
             this.context.Backgrounds.Add(newBackground);
+            this.context.SaveChanges();
         }
 
         public Background FindBackgroundById(int id)
@@ -32,12 +33,14 @@ namespace CharacterGen5th.Repositories
         public void UpdateBackground(Background toUpdate)
         {
             this.context.Entry(toUpdate).State = EntityState.Modified;
+            this.context.SaveChanges();
         }
 
         public void DeleteBackground(int id)
         {
             var toDelete = this.context.Backgrounds.Find(id);
             this.context.Backgrounds.Remove(toDelete);
+            this.context.SaveChanges();
         }
     }
 }

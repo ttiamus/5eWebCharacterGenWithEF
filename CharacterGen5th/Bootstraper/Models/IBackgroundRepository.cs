@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CharacterGen5th.Bootstraper
+namespace CharacterGen5th.Bootstraper.Models
 {
-    interface IBackgroundRepository
+    public interface IBackgroundRepository
     {
         IEnumerable<Background> GetBackgrounds();
 

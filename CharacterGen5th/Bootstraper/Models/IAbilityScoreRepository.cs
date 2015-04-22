@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CharacterGen5th.Bootstraper
+namespace CharacterGen5th.Bootstraper.Models
 {
-    interface IAbilityScoreRepository
+    public interface IAbilityScoreRepository
     {
         IEnumerable<AbilityScore> GetAbilityScores();
         
@@ -15,7 +15,7 @@ namespace CharacterGen5th.Bootstraper
 
         AbilityScore GetAbiltyScoreById (int id);
 
-        void Update(AbilityScore toUpdate);
+        void UpdateAbilityScore(AbilityScore toUpdate);
 
         void DeleteAbilityScore(int id);
     }

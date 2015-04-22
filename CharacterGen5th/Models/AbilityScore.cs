@@ -11,18 +11,22 @@ namespace CharacterGen5th.Models
     [Table("AbilityScores")]
     public class AbilityScore
     {
+        public AbilityScore()
+        {
+
+        }
+
+        public AbilityScore(string ability)
+        {
+            this.Ability = ability;
+        }
+
         [Key]
         public int AbilityScore_Id { get; set; }
 
         [Required()]
         public string Ability { get; set; }
 
-        [ForeignKey("Race_Id")]
-        public virtual Race Race { get; set; }
-        public int? Race_Id { get; set; }
-
-        [ForeignKey("Skill_Id")]
-        public virtual Skill Skill { get; set; }
-        public int? Skill_Id { get; set; }
+        public virtual IEnumerable<RaceToAbililtyScoreMap> RacesWithAbilityScore { get; set; }
     }
 }

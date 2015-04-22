@@ -11,6 +11,8 @@ namespace CharacterGen5th.Models
     [Table("Weapons")]
     public class Weapon
     {
+        public Weapon() { }
+
         [Key]
         public int Weapon_Id { get; set; }
         
@@ -39,17 +41,11 @@ namespace CharacterGen5th.Models
 
         public int RangeIncrement { get; set; }
 
-        public IEnumerable<WeaponProperty> WeaponProperties { get; set; }
-
         [Required()]
         public string ProficiencyNeeded { get; set; }
 
-        [ForeignKey("Class_Id")]
-        public virtual Class Class { get; set; }
-        public int? Class_Id { get; set; }
+        public virtual IEnumerable<WeaponToWeaponPropertyMap> WeaponProperties { get; set; }
 
-        [ForeignKey("Character_Id")]
-        public virtual Character Character { get; set; }
-        public int? Character_Id { get; set; }
+        public virtual IEnumerable<ClassToWeaponMap> WeaponProfByClass { get; set; }
     }
 }

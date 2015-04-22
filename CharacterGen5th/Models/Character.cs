@@ -11,6 +11,8 @@ namespace CharacterGen5th.Models
     [Table("Characters")]
     public class Character
     {
+       /* public Character() { }
+
         [Key]
         public int Character_Id { get; set; }
 
@@ -55,6 +57,6 @@ namespace CharacterGen5th.Models
 
         public int Age { get; set; }
 
-        public int Weight { get; set; }
+        public int Weight { get; set; }*/
     }
 }

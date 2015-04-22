@@ -5,18 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CharacterGen5th.Bootstraper
+namespace CharacterGen5th.Bootstraper.Models
 {
-    interface IClassRepository
+    public interface IClassRepository
     {
         IEnumerable<Class> GetClasses();
 
-        void CreateFeat(Class newClass);
+        void CreateClass(Class newClass);
 
-        Class FindFeatById(int id);
+        Class FindClassById(int id);
 
-        void UpdateFeat(Class toUpdate);
+        void UpdateClass(Class toUpdate);
 
-        void DeleteFeat(int id);
+        void DeleteClass(int id);
     }
 }

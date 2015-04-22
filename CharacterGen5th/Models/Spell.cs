@@ -11,14 +11,13 @@ namespace CharacterGen5th.Models
     [Table("Spells")]
     public class Spell
     {
+        public Spell() { }
+
         [Key]
         public int Spell_Id { get; set; }
 
         [Required()]
         public string SpellName { get; set; }
-
-        [Required()]
-        public virtual IEnumerable<Class> Classes { get; set; }
 
         public int SpellDc { get; set; }
 
@@ -39,9 +38,6 @@ namespace CharacterGen5th.Models
         [Required()]
         public string AreaOfEffect { get; set; }
 
-        [ForeignKey("Character_Id")]
-        public virtual Character Character { get; set; }
-        public int? Character_Id { get; set; }
-
+        public virtual IEnumerable<ClassToSpellMap> ClassesWithSpell { get; set; }
     }
 }

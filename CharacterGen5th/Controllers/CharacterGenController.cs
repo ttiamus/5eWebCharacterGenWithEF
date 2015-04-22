@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CharacterGen5th.Models;
-using CharacterGen5th.Bootstraper;
 using CharacterGen5th.Repositories;
+using CharacterGen5th.Bootstraper.Models;
 
 
 //Look into using Partail Views to render the webpages server side then pushing to web page. Replaces using razor and loops in the main view.
@@ -14,10 +14,16 @@ namespace CharacterGen5th.Controllers
     public class CharacterGenController : Controller
     {
         //Declare IRepositories here as private variables
+        private IItemRepository ItemRepo;
+        private IAbilityScoreRepository AbilityScoreRepo;
+        private ISkillRepository SkillRepo;
 
-        public CharacterGenController()
+        public CharacterGenController(IItemRepository items, IAbilityScoreRepository abilityScores, ISkillRepository skills)
         {
             //Initialize IRepositories here
+            this.ItemRepo = items;
+            this.AbilityScoreRepo = abilityScores;
+            this.SkillRepo = skills;
         }
 
 
@@ -25,6 +31,29 @@ namespace CharacterGen5th.Controllers
         // GET: /CharacterGen/
         public ActionResult Index()
         {
+            AbilityScore str = new AbilityScore("Str");
+            AbilityScore dex = new AbilityScore("Dex");
+            AbilityScore con = new AbilityScore("Con");
+            AbilityScore intel = new AbilityScore("Int");
+            AbilityScore wis = new AbilityScore("Wis");
+            AbilityScore cha = new AbilityScore("Cha");
+
+           /* AbilityScoreRepo.CreateAbilityScore(str);
+            AbilityScoreRepo.CreateAbilityScore(dex);
+            AbilityScoreRepo.CreateAbilityScore(con);
+            AbilityScoreRepo.CreateAbilityScore(intel);
+            AbilityScoreRepo.CreateAbilityScore(wis);
+            AbilityScoreRepo.CreateAbilityScore(cha);
+            AbilityScoreRepo.Save();
+            */
+            Skill acrobatics = new Skill();
+            acrobatics.SkillName = "Acrobatics";
+            acrobatics.AbilityScore = AbilityScoreRepo.GetAbiltyScoreById(2);
+            SkillRepo.CreateSkill(acrobatics);
+
+            
+
+
             return View();
         }
 

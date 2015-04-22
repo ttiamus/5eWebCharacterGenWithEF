@@ -1,5 +1,5 @@
 ﻿using CharacterGen5th.Models;
-using CharacterGen5th.Bootstraper;
+using CharacterGen5th.Bootstraper.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -22,6 +22,7 @@ namespace CharacterGen5th.Repositories
         public void CreateArmor(Armor newArmor)
         {
             this.context.Armors.Add(newArmor);
+            this.context.SaveChanges();
         }
 
         public Armor FindArmorById(int id)
@@ -32,12 +33,14 @@ namespace CharacterGen5th.Repositories
         public void UpdateArmor(Armor toUpdate)
         {
             this.context.Entry(toUpdate).State = EntityState.Modified;
+            this.context.SaveChanges();
         }
 
         public void DeleteArmor(int id)
         {
             var toDelete = this.context.Armors.Find(id);
             this.context.Armors.Remove(toDelete);
+            this.context.SaveChanges();
         }
     }
 }

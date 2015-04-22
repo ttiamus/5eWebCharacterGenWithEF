@@ -11,6 +11,8 @@ namespace CharacterGen5th.Models
     [Table("Items")]
     public class Item
     {
+        public Item() { }
+
         [Key]
         public int Item_Id { get; set; }
 
@@ -26,12 +28,6 @@ namespace CharacterGen5th.Models
         [Required()]
         public string ItemType { get; set; }
 
-        [ForeignKey("Background_Id")]
-        public virtual Background Background  { get; set; }
-        public int? Background_Id { get; set; }
-
-        [ForeignKey("Character_Id")]
-        public virtual Character Character { get; set; }
-        public int? Character_Id { get; set; }
+        public virtual IEnumerable<BackgroundToItemMap> BackgroundEquipment { get; set; }
     }
 }

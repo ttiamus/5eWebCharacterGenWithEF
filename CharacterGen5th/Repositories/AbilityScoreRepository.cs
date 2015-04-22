@@ -1,5 +1,5 @@
 ﻿using CharacterGen5th.Models;
-using CharacterGen5th.Bootstraper;
+using CharacterGen5th.Bootstraper.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -22,6 +22,7 @@ namespace CharacterGen5th.Repositories
         public void CreateAbilityScore(AbilityScore newAbilityScore)
         {
             this.context.AbilityScores.Add(newAbilityScore);
+            this.context.SaveChanges();
         }
 
         public AbilityScore GetAbiltyScoreById (int id)
@@ -29,15 +30,17 @@ namespace CharacterGen5th.Repositories
             return this.context.AbilityScores.Find(id);
         }
 
-        public void Update(AbilityScore toUpdate)
+        public void UpdateAbilityScore(AbilityScore toUpdate)
         {   
             this.context.Entry(toUpdate).State = EntityState.Modified;
+            this.context.SaveChanges();
         }
 
         public void DeleteAbilityScore(int id)
         {
             var toDelete = context.AbilityScores.Find(id);
             this.context.AbilityScores.Remove(toDelete);
+            this.context.SaveChanges();
         }
     }
 }

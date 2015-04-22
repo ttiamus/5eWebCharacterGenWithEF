@@ -1,5 +1,5 @@
 ﻿using CharacterGen5th.Models;
-using CharacterGen5th.Bootstraper;
+using CharacterGen5th.Bootstraper.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -22,6 +22,7 @@ namespace CharacterGen5th.Repositories
         public void CreateWeaponProperty(WeaponProperty newWeaponProperty)
         {
             this.context.WeaponProperties.Add(newWeaponProperty);
+            this.context.SaveChanges();
         }
 
         public WeaponProperty FindWeaponPropertyById(int id)
@@ -32,12 +33,14 @@ namespace CharacterGen5th.Repositories
         public void UpdateWeaponProperty(WeaponProperty toUpdate)
         {
             this.context.Entry(toUpdate).State = EntityState.Modified;
+            this.context.SaveChanges();
         }
 
         public void DeleteWeaponProperty(int id)
         {
             var toDelete = this.context.WeaponProperties.Find(id);
             this.context.WeaponProperties.Remove(toDelete);
+            this.context.SaveChanges();
         }
     }
 }

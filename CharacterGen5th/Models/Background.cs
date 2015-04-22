@@ -11,6 +11,8 @@ namespace CharacterGen5th.Models
     [Table("Backgrounds")]
     public class Background
     {
+        public Background() { }
+
         [Key]
         public int Background_Id { get; set; }
 
@@ -18,12 +20,12 @@ namespace CharacterGen5th.Models
         public string Name { get; set; }
 
         [Required()]
-        public virtual IEnumerable<Skill> SkillProficiencies { get; set; }
+        public virtual IEnumerable<BackgroundToSkillMap> SkillProficiencies { get; set; }
 
         [Required()]
-        public virtual IEnumerable<Language> Languages { get; set; }
+        public virtual IEnumerable<BackgroundToLanguageMap> BackgroundLanguages { get; set; }
 
         [Required()]
-        public virtual IEnumerable<Item> Equipment { get; set; }
+        public virtual IEnumerable<BackgroundToItemMap> BackgroundEquipment { get; set; }
     }
 }

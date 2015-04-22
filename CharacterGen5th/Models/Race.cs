@@ -11,6 +11,8 @@ namespace CharacterGen5th.Models
     [Table("Races")]
     public class Race
     {
+        public Race() { }
+
         [Key]
         public int Race_Id { get; set; }
 
@@ -18,10 +20,10 @@ namespace CharacterGen5th.Models
         public string RaceName { get; set; }
 
         [Required()]
-        public virtual IEnumerable<Language> AvailableLanguages { get; set; }
+        public virtual IEnumerable<RaceToLanguagesMap> AvailableLanguages { get; set; }
 
         [Required()]
-        public virtual IEnumerable<AbilityScore> IncreasedAbilityScores { get; set; }
+        public virtual IEnumerable<RaceToAbililtyScoreMap> IncreasedAbilityScores { get; set; }
 
         [Required()]
         [ForeignKey("Size_Id")]
@@ -31,6 +33,12 @@ namespace CharacterGen5th.Models
         [Required()]
         public int Speed { get; set; }
 
-        public virtual IEnumerable<Race> SubRace { get; set; }
+        public virtual IEnumerable<Race> SubRaces { get; set; }
+
+        [ForeignKey("SubRace_Id")]
+        public virtual Race SubRace { get; set; }
+        public int? SubRace_Id { get; set; }
+
+        public virtual IEnumerable<RaceToRacePropertyMap> RaceProperties { get; set; }
     }
 }

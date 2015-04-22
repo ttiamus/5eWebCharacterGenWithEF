@@ -1,4 +1,4 @@
-﻿using CharacterGen5th.Bootstraper;
+﻿using CharacterGen5th.Bootstraper.Models;
 using CharacterGen5th.Models;
 using System;
 using System.Collections.Generic;
@@ -22,6 +22,7 @@ namespace CharacterGen5th.Repositories
         public void CreateCharacter(Alignment newAlignment)
         {
             this.context.Alignments.Add(newAlignment);
+            this.context.SaveChanges();
         }
 
         public Alignment GetAbiltyScoreById(int id)
@@ -32,12 +33,14 @@ namespace CharacterGen5th.Repositories
         public void Update(Alignment toUpdate)
         {
             this.context.Entry(toUpdate).State = EntityState.Modified;
+            this.context.SaveChanges();
         }
 
         public void DeleteAbilityScore(int id)
         {
             var toDelete = context.Alignments.Find(id);
             this.context.Alignments.Remove(toDelete);
+            this.context.SaveChanges();
         }
     }
 }

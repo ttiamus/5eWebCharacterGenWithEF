@@ -17,16 +17,28 @@ namespace CharacterGen5th.Models
         public DbSet<Alignment> Alignments { get; set; }
         public DbSet<Armor> Armors { get; set; }
         public DbSet<Background> Backgrounds { get; set; }
-        public DbSet<Character> Characters { get; set; }
+        //public DbSet<Character> Characters { get; set; }
         public DbSet<Class> Classes { get; set; }
         public DbSet<Feat> Feats { get; set; }
         public DbSet<Item> Items { get; set; }
         public DbSet<Language> Languages { get; set; }
         public DbSet<Race> Races { get; set; }
+        public DbSet<RaceProperty> RaceProperties { get; set; }
         public DbSet<Size> Sizes { get; set; }
         public DbSet<Skill> Skills { get; set; }
         public DbSet<Spell> Spells { get; set; }
         public DbSet<Weapon> Weapons { get; set; }
         public DbSet<WeaponProperty> WeaponProperties { get; set; }
+
+        //Mapping
+        public DbSet<BackgroundToItemMap> BackgroundToItemMappings { get; set; }
+        public DbSet<BackgroundToLanguageMap> BackgroundToLanguageMappings { get; set; }
+        public DbSet<BackgroundToSkillMap> BackgroundToSkillMappings { get; set; }
+        public DbSet<ClassToArmorMap> ClassToArmorMappings { get; set; }
+        public DbSet<ClassToSpellMap> ClassToSpellMappings { get; set; }
+        public DbSet<ClassToWeaponMap> ClassToWeaponMappings { get; set; }
+        public DbSet<RaceToAbililtyScoreMap> RaceToAbililtyScoreMappings { get; set; }
+        public DbSet<RaceToLanguagesMap> RaceToLanguagesMappings { get; set; }
+        public DbSet<RaceToRacePropertyMap> RaceToRacePropertyMappings { get; set; }
     }
 }

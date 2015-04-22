@@ -1,5 +1,5 @@
 ﻿using CharacterGen5th.Models;
-using CharacterGen5th.Bootstraper;
+using CharacterGen5th.Bootstraper.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -22,6 +22,7 @@ namespace CharacterGen5th.Repositories
         public void CreateLanguage(Language newLanguage)
         {
             this.context.Languages.Add(newLanguage);
+            this.context.SaveChanges();
         }
 
         public Language FindLanguage(int id)
@@ -32,12 +33,14 @@ namespace CharacterGen5th.Repositories
         public void UpdateLanguage(Language toUpdate)
         {
             this.context.Entry(toUpdate).State = EntityState.Modified;
+            this.context.SaveChanges();
         }
 
         public void DeleteLanguage(int id)
         {
             var toDelete = this.context.Languages.Find(id);
             this.context.Languages.Remove(toDelete);
+            this.context.SaveChanges();
         }
     }
 }

@@ -11,6 +11,8 @@ namespace CharacterGen5th.Models
     [Table("Skills")]
     public class Skill
     {
+        public Skill() { }
+
         [Key]
         public int Skill_Id { get; set; }
 
@@ -22,8 +24,6 @@ namespace CharacterGen5th.Models
         public AbilityScore AbilityScore { get; set; }
         public int? AbilityScore_Id { get; set; }
 
-        [ForeignKey("Background_Id")]
-        public virtual Background Background { get; set; }
-        public int? Background_Id { get; set; }
+        public virtual IEnumerable<BackgroundToSkillMap> BackgroundThatGiveSkill { get; set; }
     }
 }

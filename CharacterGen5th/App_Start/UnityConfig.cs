@@ -2,7 +2,7 @@ using System;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
 using CharacterGen5th.Repositories;
-using CharacterGen5th.Bootstraper;
+using CharacterGen5th.Bootstraper.Models;
 
 namespace CharacterGen5th.App_Start
 {
@@ -41,17 +41,29 @@ namespace CharacterGen5th.App_Start
             container.RegisterType<IAlignmentRepository, AlignmentRepository>();
             container.RegisterType<IArmorRepository, ArmorRepository>();
             container.RegisterType<IBackgroundRepository, BackgroundRepository>();
-            container.RegisterType<ICharacterRepository, CharacterRepository>();
+            //container.RegisterType<ICharacterRepository, CharacterRepository>();
             container.RegisterType<IClassRepository, ClassRepository>();
             container.RegisterType<IFeatRepository, FeatRepository>();
             container.RegisterType<IItemRepository, ItemRepository>();
             container.RegisterType<ILanguageRepository, LanguageRepository>();
             container.RegisterType<IRaceRepository, RaceRepository>();
+            container.RegisterType<IRacePropertyRepository, RacePropertyRepository>();
             container.RegisterType<ISizeRepository, SizeRepository>();
             container.RegisterType<ISkillRepository, SkillRepository>();
             container.RegisterType<ISpellRepository, SpellRepository>();
             container.RegisterType<IWeaponPropertyRepository, WeaponPropertyRepository>();
             container.RegisterType<IWeaponRepository, WeaponRepository>();
+
+            //Mappings
+            container.RegisterType<IBackgroundToItemMappingRepository, BackgroundToItemMappingRepository>();
+            container.RegisterType<IBackgroundToLanguageMappingRepository, BackgroundToLanguageMappingRepository>();
+            container.RegisterType<IBackgroundToSkillMappingRepository, BackgroundToSkillMappingRepository>();
+            container.RegisterType<IClassToArmorMappingRepository, ClassToArmorMappingRepository>();
+            container.RegisterType<IClassToSpellMappingRepository, ClassToSpellMappingRepository>();
+            container.RegisterType<IClassToWeaponMappingRepository, ClassToWeaponMappingRepository>();
+            container.RegisterType<IRaceToAbilityScoreMappingRepository, RaceToAbilityScoreMappingRepository>();
+            container.RegisterType<IRaceToLanguageMappingRepository, RaceToLanguageMappingRepository>();
+            container.RegisterType<IRaceToRacePropertyMappingRepository, RaceToRacePropertyMappingRepository>();
         }
     }
 }

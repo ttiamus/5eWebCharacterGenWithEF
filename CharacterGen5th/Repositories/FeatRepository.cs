@@ -1,5 +1,5 @@
 ﻿using CharacterGen5th.Models;
-using CharacterGen5th.Bootstraper;
+using CharacterGen5th.Bootstraper.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -22,6 +22,7 @@ namespace CharacterGen5th.Repositories
         public void CreateFeat(Feat newFeat)
         {
             this.context.Feats.Add(newFeat);
+            this.context.SaveChanges();
         }
 
         public Feat FindFeatById(int id)
@@ -32,12 +33,14 @@ namespace CharacterGen5th.Repositories
         public void UpdateFeat(Feat toUpdate)
         {
             this.context.Entry(toUpdate).State = EntityState.Modified;
+            this.context.SaveChanges();
         }
 
         public void DeleteFeat(int id)
         {
             var toDelete = this.context.Feats.Find(id);
             this.context.Feats.Remove(toDelete);
+            this.context.SaveChanges();
         }
     }
 }

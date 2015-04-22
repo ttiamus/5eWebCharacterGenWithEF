@@ -1,4 +1,5 @@
-﻿using CharacterGen5th.Models;
+﻿using CharacterGen5th.Bootstraper.Models;
+using CharacterGen5th.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace CharacterGen5th.Repositories
             this.context = context;
         }
 
-        public void Save()
+        public virtual void Save()
         {
             this.context.SaveChanges();
         }

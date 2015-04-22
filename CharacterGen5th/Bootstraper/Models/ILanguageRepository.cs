@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CharacterGen5th.Bootstraper
+namespace CharacterGen5th.Bootstraper.Models
 {
-    interface ILanguageRepository
+    public interface ILanguageRepository
     {
         IEnumerable<Language> GetLanguages();
 

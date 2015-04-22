@@ -8,6 +8,8 @@ namespace CharacterGen5th.Models
 {
     public class Alignment
     {
+        public Alignment() { }
+
         [Key]
         public int Alignment_Id  { get; set; }
 

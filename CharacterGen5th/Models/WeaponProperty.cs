@@ -11,6 +11,8 @@ namespace CharacterGen5th.Models
     [Table("WeaponProperties")]
     public class WeaponProperty
     {
+        public WeaponProperty() { }
+
         [Key]
         public int WeaponProperty_Id { get; set; }
         
@@ -20,8 +22,6 @@ namespace CharacterGen5th.Models
         [Required()]
         public string Description { get; set; }
 
-        [ForeignKey("Weapon_Id")]
-        public virtual Weapon Weapon { get; set; }
-        public int? Weapon_Id { get; set; }
+        public IEnumerable<WeaponToWeaponPropertyMap> WeaponProperties { get; set; }
     }
 }

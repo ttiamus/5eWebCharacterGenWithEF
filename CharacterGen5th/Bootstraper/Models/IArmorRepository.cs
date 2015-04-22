@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CharacterGen5th.Bootstraper
+namespace CharacterGen5th.Bootstraper.Models
 {
-    interface IArmorRepository
+    public interface IArmorRepository
     {
         IEnumerable<Armor> GetArmors();
 

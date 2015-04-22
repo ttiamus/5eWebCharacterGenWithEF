@@ -7,13 +7,13 @@ namespace CharacterGen5th.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class InitialSetup : IMigrationMetadata
+    public sealed partial class InitalSetupWithSplitForeignKeys : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialSetup));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitalSetupWithSplitForeignKeys));
         
         string IMigrationMetadata.Id
         {
-            get { return "201504170350113_InitialSetup"; }
+            get { return "201504192019128_InitalSetupWithSplitForeignKeys"; }
         }
         
         string IMigrationMetadata.Source

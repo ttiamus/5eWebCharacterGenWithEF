@@ -11,6 +11,8 @@ namespace CharacterGen5th.Models
     [Table("Feats")]
     public class Feat
     {
+        public Feat() { }
+
         [Key]
         public int Feat_Id { get; set; }
 
@@ -19,10 +21,7 @@ namespace CharacterGen5th.Models
         
         public string Description { get; set; }
 
-        public IEnumerable<string> Benefits { get; set; }
+        public string Benefits { get; set; }
 
-        [ForeignKey("Character_Id")]
-        public virtual Character Character { get; set; }
-        public int? Character_Id { get; set; }
     }
 }

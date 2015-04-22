@@ -11,6 +11,8 @@ namespace CharacterGen5th.Models
     [Table("Sizes")]
     public class Size
     {
+        public Size() { }
+
         [Key]
         public int Size_Id { get; set; }
 

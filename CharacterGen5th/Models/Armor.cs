@@ -11,6 +11,8 @@ namespace CharacterGen5th.Models
     [Table("Armors")]
     public class Armor
     {
+        public Armor() {}
+
         [Key]
         public int Armor_Id { get; set; }
 
@@ -38,8 +40,6 @@ namespace CharacterGen5th.Models
         [Required()]
         public bool StealthDisadvantage { get; set; }
 
-        [ForeignKey("Class_Id")]
-        public virtual Class Class { get; set; }
-        public int? Class_Id { get; set; }
+        public virtual IEnumerable<ClassToArmorMap> ArmorProfByClass { get; set; }
     }
 }
