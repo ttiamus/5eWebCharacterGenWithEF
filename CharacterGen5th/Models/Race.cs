@@ -19,6 +19,8 @@ namespace CharacterGen5th.Models
         [Required()]
         public string RaceName { get; set; }
 
+        public string Type { get; set; }
+
         [Required()]
         public virtual IEnumerable<RaceToLanguagesMap> AvailableLanguages { get; set; }
 
@@ -34,10 +36,6 @@ namespace CharacterGen5th.Models
         public int Speed { get; set; }
 
         public virtual IEnumerable<Race> SubRaces { get; set; }
-
-        [ForeignKey("SubRace_Id")]
-        public virtual Race SubRace { get; set; }
-        public int? SubRace_Id { get; set; }
 
         public virtual IEnumerable<RaceToRacePropertyMap> RaceProperties { get; set; }
     }

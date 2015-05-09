@@ -19,6 +19,11 @@ namespace CharacterGen5th.Models
 
         public string Description { get; set; }
 
+        public bool PrimaryTrait { get; set; }
+
+        [ForeignKey("RaceProperty_Id")]
+        public RaceProperty RacePropertyReplaces { get; set; }
+
         public virtual IEnumerable<RaceToRacePropertyMap> RacesWithRaceProperty { get; set; }
     }
 }

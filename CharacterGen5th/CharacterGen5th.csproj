@@ -248,6 +248,7 @@
     <Compile Include="Models\CharGenContext.cs" />
     <Compile Include="Models\Class.cs" />
     <Compile Include="Models\ClassToArmorMap.cs" />
+    <Compile Include="Models\ClassToRaceMap.cs" />
     <Compile Include="Models\ClassToSpellMap.cs" />
     <Compile Include="Models\ClassToWeaponMap.cs" />
     <Compile Include="Models\Feat.cs" />
@@ -262,6 +263,7 @@
     <Compile Include="Models\Size.cs" />
     <Compile Include="Models\Skill.cs" />
     <Compile Include="Models\Spell.cs" />
+    <Compile Include="Models\Trait.cs" />
     <Compile Include="Models\Weapon.cs" />
     <Compile Include="Models\WeaponProperty.cs" />
     <Compile Include="Models\WeaponToWeaponPropertyMap.cs" />
@@ -309,10 +311,6 @@
     <Compile Include="Services\DataRetrievalService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Database1.mdf" />
-    <Content Include="App_Data\Database1_log.ldf">
-      <DependentUpon>Database1.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -449,6 +447,9 @@
     <EmbeddedResource Include="Migrations\201504192020220_ChangeBackgroundToSkillName.resx">
       <DependentUpon>201504192020220_ChangeBackgroundToSkillName.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

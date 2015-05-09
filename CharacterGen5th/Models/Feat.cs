@@ -19,9 +19,10 @@ namespace CharacterGen5th.Models
         [Required()]
         public string Name { get; set; }
         
+        public string Type { get; set; }
+        
         public string Description { get; set; }
 
         public string Benefits { get; set; }
-
     }
 }

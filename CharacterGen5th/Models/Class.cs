@@ -16,27 +16,28 @@ namespace CharacterGen5th.Models
         [Key]
         public int Class_Id { get; set; }
 
-        [Required()]
         public string Name { get; set; }
 
-        [Required()]
         public string Description { get; set; }
 
-        [Required()]
         public int HitDie { get; set; }
 
-        [Required()]
-        public string PrimaryAbility { get; set; }
+        public int SkillsPerLevel { get; set; }
 
-        [Required()]
-        public List<string> SavingThrowProf { get; set; }
+        public string BABProgression { get; set; }
 
-        [Required()]
+        public string FortSaveProgression { get; set; }
+
+        public string RefSaveProgression { get; set; }
+
+        public string WillSaveProgression { get; set; }
+
         public virtual IEnumerable<ClassToWeaponMap> WeaponProf { get; set; }
 
-        [Required()]
         public virtual IEnumerable<ClassToArmorMap> ArmorProf { get; set; }
 
         public virtual IEnumerable<ClassToSpellMap> ClassSpells { get; set; }
+
+        public virtual IEnumerable<ClassToRaceMap> ClassRacialBonuses { get; set; }
     }
 }

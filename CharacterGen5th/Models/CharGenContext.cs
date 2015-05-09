@@ -8,7 +8,7 @@ namespace CharacterGen5th.Models
 {
     public class CharGenContext : DbContext
     {
-        public CharGenContext() : base("CharGen5thCodeFirst")
+        public CharGenContext() : base("Pathfinder")
         {
 
         }
