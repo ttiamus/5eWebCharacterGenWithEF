@@ -18,19 +18,11 @@ namespace CharacterGen5th.Models
 
         public string Name { get; set; }
 
-        public string Description { get; set; }
+        //public string Description { get; set; }
 
         public int HitDie { get; set; }
-
-        public int SkillsPerLevel { get; set; }
-
-        public string BABProgression { get; set; }
-
-        public string FortSaveProgression { get; set; }
-
-        public string RefSaveProgression { get; set; }
-
-        public string WillSaveProgression { get; set; }
+        
+        //Add property to choose class skills
 
         public virtual IEnumerable<ClassToWeaponMap> WeaponProf { get; set; }
 

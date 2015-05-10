@@ -3,6 +3,7 @@ using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
 using CharacterGen5th.Repositories;
 using CharacterGen5th.Bootstraper.Models;
+using CharacterGen5th.Models;
 
 namespace CharacterGen5th.App_Start
 {
@@ -58,7 +59,9 @@ namespace CharacterGen5th.App_Start
             container.RegisterType<IBackgroundToItemMappingRepository, BackgroundToItemMappingRepository>();
             container.RegisterType<IBackgroundToLanguageMappingRepository, BackgroundToLanguageMappingRepository>();
             container.RegisterType<IBackgroundToSkillMappingRepository, BackgroundToSkillMappingRepository>();
+            container.RegisterType<IClassToAbilityScoreMappingRepository, ClassToAbilityScoreMappingRepository>();
             container.RegisterType<IClassToArmorMappingRepository, ClassToArmorMappingRepository>();
+            container.RegisterType<IClassToSavingThrowMappingRepository, ClassToSavingThrowMappingRepository>();
             container.RegisterType<IClassToSpellMappingRepository, ClassToSpellMappingRepository>();
             container.RegisterType<IClassToWeaponMappingRepository, ClassToWeaponMappingRepository>();
             container.RegisterType<IRaceToAbilityScoreMappingRepository, RaceToAbilityScoreMappingRepository>();

@@ -8,7 +8,7 @@ namespace CharacterGen5th.Models
 {
     public class CharGenContext : DbContext
     {
-        public CharGenContext() : base("Pathfinder")
+        public CharGenContext() : base("CharGen5thCodeFirst")
         {
 
         }
@@ -34,7 +34,9 @@ namespace CharacterGen5th.Models
         public DbSet<BackgroundToItemMap> BackgroundToItemMappings { get; set; }
         public DbSet<BackgroundToLanguageMap> BackgroundToLanguageMappings { get; set; }
         public DbSet<BackgroundToSkillMap> BackgroundToSkillMappings { get; set; }
+        public DbSet<ClassToAbilityScoreMap> ClassToAbilityScoreMappings { get; set; }
         public DbSet<ClassToArmorMap> ClassToArmorMappings { get; set; }
+        public DbSet<ClassToSavingThrowMap> ClassToSavingThrowMappings { get; set; }
         public DbSet<ClassToSpellMap> ClassToSpellMappings { get; set; }
         public DbSet<ClassToWeaponMap> ClassToWeaponMappings { get; set; }
         public DbSet<RaceToAbililtyScoreMap> RaceToAbililtyScoreMappings { get; set; }
