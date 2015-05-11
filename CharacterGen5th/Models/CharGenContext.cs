@@ -19,7 +19,9 @@ namespace CharacterGen5th.Models
         public DbSet<Background> Backgrounds { get; set; }
         //public DbSet<Character> Characters { get; set; }
         public DbSet<Class> Classes { get; set; }
+        public DbSet<Domain> Domains { get; set; }
         public DbSet<Feat> Feats { get; set; }
+        public DbSet<God> Gods { get; set; }
         public DbSet<Item> Items { get; set; }
         public DbSet<Language> Languages { get; set; }
         public DbSet<Race> Races { get; set; }
@@ -39,6 +41,7 @@ namespace CharacterGen5th.Models
         public DbSet<ClassToSavingThrowMap> ClassToSavingThrowMappings { get; set; }
         public DbSet<ClassToSpellMap> ClassToSpellMappings { get; set; }
         public DbSet<ClassToWeaponMap> ClassToWeaponMappings { get; set; }
+        public DbSet<GodToDomainMap> GodToDoaminMappings { get; set; }
         public DbSet<RaceToAbililtyScoreMap> RaceToAbililtyScoreMappings { get; set; }
         public DbSet<RaceToLanguagesMap> RaceToLanguagesMappings { get; set; }
         public DbSet<RaceToRacePropertyMap> RaceToRacePropertyMappings { get; set; }

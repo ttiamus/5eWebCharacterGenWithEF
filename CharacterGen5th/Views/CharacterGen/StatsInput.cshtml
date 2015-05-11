@@ -1,4 +1,6 @@
-﻿@{
+﻿@model CharacterGen5th.Models.ViewModels.DemographicViewModel
+
+@{
     ViewBag.Title = "Stats";
 }
 
@@ -85,7 +87,13 @@
             <label>Player Name</label><input type="text">
             <label>Character Name</label><input type="text">
             <label>Age</label><input type="text">
-            <label>Gender</label><input type="text">
+            
+            <label>Gender</label>    
+            <select>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+
             <label>Height</label><input type="text">
             <label>Weight</label><input type="text">
             <label>Eyes</label><input type="text">

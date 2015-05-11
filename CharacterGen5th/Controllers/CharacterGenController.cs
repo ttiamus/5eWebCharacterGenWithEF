@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using CharacterGen5th.Models;
 using CharacterGen5th.Repositories;
 using CharacterGen5th.Bootstraper.Models;
+using CharacterGen5th.Models.ViewModels;
 
 
 //Look into using Partail Views to render the webpages server side then pushing to web page. Replaces using razor and loops in the main view.
@@ -39,7 +40,8 @@ namespace CharacterGen5th.Controllers
         // GET: /CharacterGen/StatsInput
         public ActionResult StatsInput()
         {
-            return View("StatsInput", AbilityScoreRepo.GetAbilityScores());
+            DemographicViewModel demoVM = new DemographicViewModel();
+            return View("StatsInput", demoVM);
         }
 
         // GET: /CharacterGen/Items
