@@ -9,17 +9,17 @@ namespace CharacterGen5th.Models.ViewModels
     public class DemographicViewModel
     {
         //These are items that would get posted back
-        public AbilityScore Str { get; set; }
-        public AbilityScore Dex { get; set; }
-        public AbilityScore Con { get; set; }
-        public AbilityScore Int { get; set; }
-        public AbilityScore Wis { get; set; }
-        public AbilityScore Cha { get; set; }
+        public int Str { get; set; }
+        public int Dex { get; set; }
+        public int Con { get; set; }
+        public int Int { get; set; }
+        public int Wis { get; set; }
+        public int Cha { get; set; }
 
         public string PlayerName { get; set; }
         public string CharacterName { get; set; }
         public int Age { get; set; }
-        public string Gender { get; set; }
+        public bool Male { get; set; }
         public int Height { get; set; }
         public int Weight { get; set; }
         public string Eyes { get; set; }
@@ -27,9 +27,31 @@ namespace CharacterGen5th.Models.ViewModels
         public string Skin { get; set; }
         public string Wealth { get; set; }
 
-        public Race Race { get; set; }
+        public IEnumerable<Race> Races { get; set; }
 
         public Alignment Alignment { get; set; }
         public God God { get; set; }
+
+        public DemographicViewModel()
+        {
+            Str = Dex = Con = Int = Wis = Cha = 10; // Set all inital stats to 10
+            PlayerName = "";
+            CharacterName = "";
+            Age = 0;
+            Male = true;
+            Height = 0;
+            Weight = 0;
+            Eyes = "";
+            Hair = "";
+            Skin = "";
+            Wealth = "";
+        }
+
+        public DemographicViewModel(int characterId)
+        {
+            //Find character Id in the database.
+            //If it exists, initialize all stats from what is there.
+        }
+
     }
 }

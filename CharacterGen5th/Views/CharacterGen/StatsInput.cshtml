@@ -24,7 +24,7 @@
 
             <tr>
                 <td>STR</td>
-                <td>@Html.TextBox("strScore")</td>
+                <td>@Html.TextBox("strScore", @Model.Str)</td>
                 <td>@Html.Label("strRacialMod", "0", new { @class = "statsLabel" })</td>
                 <td>@Html.Label("strTotal", "0", new { @class = "statsLabel" })</td>
                 <td>@Html.Label("strBonus", "0", new { @class = "statsLabel" })</td>
@@ -33,7 +33,7 @@
 
             <tr>
                 <td>DEX</td>
-                <td>@Html.TextBox("dexScore")</td>
+                <td>@Html.TextBox("dexScore", @Model.Dex)</td>
                 <td>@Html.Label("dexRacialMod", "0", new { @class = "statsLabel" })</td>
                 <td>@Html.Label("dexTotal", "0", new { @class = "statsLabel" })</td>
                 <td>@Html.Label("dexBonus", "0", new { @class = "statsLabel" })</td>
@@ -42,7 +42,7 @@
 
             <tr>
                 <td>CON</td>
-                <td>@Html.TextBox("conScore")</td>
+                <td>@Html.TextBox("conScore", @Model.Con)</td>
                 <td>@Html.Label("conRacialMod", "0", new { @class = "statsLabel" })</td>
                 <td>@Html.Label("conTotal", "0", new { @class = "statsLabel" })</td>
                 <td>@Html.Label("conBonus", "0", new { @class = "statsLabel" })</td>
@@ -51,7 +51,7 @@
 
             <tr>
                 <td>INT</td>
-                <td>@Html.TextBox("intScore")</td>
+                <td>@Html.TextBox("intScore", @Model.Int)</td>
                 <td>@Html.Label("intRacialMod", "0", new { @class = "statsLabel" })</td>
                 <td>@Html.Label("intTotal", "0", new { @class = "statsLabel" })</td>
                 <td>@Html.Label("intBonus", "0", new { @class = "statsLabel" })</td>
@@ -60,7 +60,7 @@
 
             <tr>
                 <td>WIS</td>
-                <td>@Html.TextBox("wisScore")</td>
+                <td>@Html.TextBox("wisScore", @Model.Wis)</td>
                 <td>@Html.Label("wisRacialMod", "0", new { @class = "statsLabel" })</td>
                 <td>@Html.Label("wisTotal", "0", new { @class = "statsLabel" })</td>
                 <td>@Html.Label("wisBonus", "0", new { @class = "statsLabel" })</td>
@@ -69,7 +69,7 @@
 
             <tr>
                 <td>CHA</td>
-                <td>@Html.TextBox("chaScore")</td>
+                <td>@Html.TextBox("chaScore", @Model.Cha)</td>
                 <td>@Html.Label("chaRacialMod", "0", new { @class = "statsLabel" })</td>
                 <td>@Html.Label("chaTotal", "0", new { @class = "statsLabel" })</td>
                 <td>@Html.Label("chaBonus", "0", new { @class = "statsLabel" })</td>

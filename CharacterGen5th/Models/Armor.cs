@@ -31,8 +31,7 @@ namespace CharacterGen5th.Models
         [Required()]
         public int BaseAc { get; set; }
 
-        [Required()]
-        public int MaxDexMod { get; set; }
+        public int? MaxDexMod { get; set; }
 
         [Required()]
         public int RequiredStr { get; set; }

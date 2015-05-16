@@ -254,6 +254,18 @@
     <Compile Include="Migrations\201505110125118_addedDomainAndGodsAndMappingsForThem.Designer.cs">
       <DependentUpon>201505110125118_addedDomainAndGodsAndMappingsForThem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505160124291_MakeMaxDexNullable.cs" />
+    <Compile Include="Migrations\201505160124291_MakeMaxDexNullable.Designer.cs">
+      <DependentUpon>201505160124291_MakeMaxDexNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505160128443_RemoveProfNeededFromWeapon.cs" />
+    <Compile Include="Migrations\201505160128443_RemoveProfNeededFromWeapon.Designer.cs">
+      <DependentUpon>201505160128443_RemoveProfNeededFromWeapon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505160130487_MadeRangeAndRangeIncNullable.cs" />
+    <Compile Include="Migrations\201505160130487_MadeRangeAndRangeIncNullable.Designer.cs">
+      <DependentUpon>201505160130487_MadeRangeAndRangeIncNullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AbilityScore.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -484,6 +496,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505110125118_addedDomainAndGodsAndMappingsForThem.resx">
       <DependentUpon>201505110125118_addedDomainAndGodsAndMappingsForThem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505160124291_MakeMaxDexNullable.resx">
+      <DependentUpon>201505160124291_MakeMaxDexNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505160128443_RemoveProfNeededFromWeapon.resx">
+      <DependentUpon>201505160128443_RemoveProfNeededFromWeapon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505160130487_MadeRangeAndRangeIncNullable.resx">
+      <DependentUpon>201505160130487_MadeRangeAndRangeIncNullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

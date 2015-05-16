@@ -19,14 +19,16 @@ namespace CharacterGen5th.Controllers
         private IItemRepository ItemRepo;
         private ISkillRepository SkillRepo;
         private IClassRepository ClassRepo;
+        private IRaceRepository RaceRepo;
 
-        public CharacterGenController(IItemRepository items, IAbilityScoreRepository abilityScores, ISkillRepository skills, IClassRepository classes)
+        public CharacterGenController(IItemRepository items, IAbilityScoreRepository abilityScores, ISkillRepository skills, IClassRepository classes, IRaceRepository races)
         {
             //Initialize IRepositories here
             this.AbilityScoreRepo = abilityScores;
             this.ItemRepo = items;
             this.SkillRepo = skills;
             this.ClassRepo = classes;
+            this.RaceRepo = races;
         }
 
 
@@ -41,6 +43,8 @@ namespace CharacterGen5th.Controllers
         public ActionResult StatsInput()
         {
             DemographicViewModel demoVM = new DemographicViewModel();
+            demoVM.Races = RaceRepo.GetRaces();
+
             return View("StatsInput", demoVM);
         }
 

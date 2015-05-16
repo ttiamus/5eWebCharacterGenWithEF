@@ -37,12 +37,9 @@ namespace CharacterGen5th.Models
         [Required()]
         public bool MeleeWeapon { get; set; }
 
-        public int Range { get; set; }
+        public int? Range { get; set; }
 
-        public int RangeIncrement { get; set; }
-
-        [Required()]
-        public string ProficiencyNeeded { get; set; }
+        public int? RangeIncrement { get; set; }
 
         public virtual IEnumerable<WeaponToWeaponPropertyMap> WeaponProperties { get; set; }
 
