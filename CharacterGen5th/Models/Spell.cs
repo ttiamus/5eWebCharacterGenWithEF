@@ -19,13 +19,15 @@ namespace CharacterGen5th.Models
         [Required()]
         public string SpellName { get; set; }
 
-        public int SpellDc { get; set; }
+        public bool SpellDc { get; set; }
 
         [Required()]
         public string CastTime { get; set; }
 
         [Required()]
         public string Duration { get; set; }
+
+        public string Damage { get; set; }
 
         public string Components { get; set; }
 

@@ -266,6 +266,18 @@
     <Compile Include="Migrations\201505160130487_MadeRangeAndRangeIncNullable.Designer.cs">
       <DependentUpon>201505160130487_MadeRangeAndRangeIncNullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505170021353_ChangeSpellDcToBool.cs" />
+    <Compile Include="Migrations\201505170021353_ChangeSpellDcToBool.Designer.cs">
+      <DependentUpon>201505170021353_ChangeSpellDcToBool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505170023240_AddDamageToSpells.cs" />
+    <Compile Include="Migrations\201505170023240_AddDamageToSpells.Designer.cs">
+      <DependentUpon>201505170023240_AddDamageToSpells.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505170027113_AddedSpellLevelToClassSpellMap.cs" />
+    <Compile Include="Migrations\201505170027113_AddedSpellLevelToClassSpellMap.Designer.cs">
+      <DependentUpon>201505170027113_AddedSpellLevelToClassSpellMap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AbilityScore.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -299,6 +311,7 @@
     <Compile Include="Models\Skill.cs" />
     <Compile Include="Models\Spell.cs" />
     <Compile Include="Models\Trait.cs" />
+    <Compile Include="Models\ViewModels\ItemsViewModel.cs" />
     <Compile Include="Models\Weapon.cs" />
     <Compile Include="Models\WeaponProperty.cs" />
     <Compile Include="Models\WeaponToWeaponPropertyMap.cs" />
@@ -505,6 +518,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505160130487_MadeRangeAndRangeIncNullable.resx">
       <DependentUpon>201505160130487_MadeRangeAndRangeIncNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505170021353_ChangeSpellDcToBool.resx">
+      <DependentUpon>201505170021353_ChangeSpellDcToBool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505170023240_AddDamageToSpells.resx">
+      <DependentUpon>201505170023240_AddDamageToSpells.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505170027113_AddedSpellLevelToClassSpellMap.resx">
+      <DependentUpon>201505170027113_AddedSpellLevelToClassSpellMap.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

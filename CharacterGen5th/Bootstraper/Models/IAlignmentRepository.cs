@@ -10,11 +10,11 @@ namespace CharacterGen5th.Bootstraper.Models
     {
         IEnumerable<Alignment> GetAlignments();
 
-        void CreateCharacter(Alignment newAlignment);
+        void CreateAlignment(Alignment newAlignment);
 
-        Alignment GetAbiltyScoreById(int id);
+        Alignment GetAlignmentById(int id);
 
-        void Update(Alignment toUpdate);
+        void UpdateAlignment(Alignment toUpdate);
 
         void DeleteAbilityScore(int id);
     }

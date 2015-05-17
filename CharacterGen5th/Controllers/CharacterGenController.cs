@@ -20,8 +20,12 @@ namespace CharacterGen5th.Controllers
         private ISkillRepository SkillRepo;
         private IClassRepository ClassRepo;
         private IRaceRepository RaceRepo;
+        private IArmorRepository ArmorRepo;
+        private IWeaponRepository WeaponRepo;
+        private IAlignmentRepository AlignmentRepo;
+        //private IGodRepository GodRepo
 
-        public CharacterGenController(IItemRepository items, IAbilityScoreRepository abilityScores, ISkillRepository skills, IClassRepository classes, IRaceRepository races)
+        public CharacterGenController(IItemRepository items, IAbilityScoreRepository abilityScores, ISkillRepository skills, IClassRepository classes, IRaceRepository races, IArmorRepository armorRepo, IWeaponRepository weaponRepo, IAlignmentRepository alignmentRepo)
         {
             //Initialize IRepositories here
             this.AbilityScoreRepo = abilityScores;
@@ -29,6 +33,10 @@ namespace CharacterGen5th.Controllers
             this.SkillRepo = skills;
             this.ClassRepo = classes;
             this.RaceRepo = races;
+            this.ArmorRepo = armorRepo;
+            this.WeaponRepo = weaponRepo;
+            this.AlignmentRepo = alignmentRepo;
+
         }
 
 
@@ -43,7 +51,9 @@ namespace CharacterGen5th.Controllers
         public ActionResult StatsInput()
         {
             DemographicViewModel demoVM = new DemographicViewModel();
-            demoVM.Races = RaceRepo.GetRaces();
+            demoVM.Races = RaceRepo.GetRaces().OrderBy(x => x.RaceName);
+            demoVM.Alignments = AlignmentRepo.GetAlignments();//.OrderBy(x => x.Alignment_Name);
+            //demoVM.Gods = 
 
             return View("StatsInput", demoVM);
         }
@@ -51,7 +61,13 @@ namespace CharacterGen5th.Controllers
         // GET: /CharacterGen/Items
         public ActionResult Items()
         {
-            return View("Items", ItemRepo.GetItems());
+            ItemsViewModel itemVM = new ItemsViewModel();
+            itemVM.Armors = ArmorRepo.GetArmors().OrderBy(x => x.Name);
+            itemVM.ItemsAmunition = ItemRepo.GetItems().Where(x => x.ItemType == "Ammunition").OrderBy(x => x.Name);
+            itemVM.ItemsGeneral = ItemRepo.GetItems().Where(x => x.ItemType != "Ammunition").OrderBy(x => x.Name);
+            itemVM.Weapons = WeaponRepo.GetWeapons().OrderBy(x => x.Name);
+
+            return View("Items", itemVM);
         }
 
         // GET: /CharacterGen/Skills

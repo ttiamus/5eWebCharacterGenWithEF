@@ -28,9 +28,8 @@ namespace CharacterGen5th.Models.ViewModels
         public string Wealth { get; set; }
 
         public IEnumerable<Race> Races { get; set; }
-
-        public Alignment Alignment { get; set; }
-        public God God { get; set; }
+        public IEnumerable<Alignment> Alignments { get; set; }
+        public IEnumerable<God> Gods { get; set; }
 
         public DemographicViewModel()
         {

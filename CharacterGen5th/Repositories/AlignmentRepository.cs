@@ -19,18 +19,18 @@ namespace CharacterGen5th.Repositories
             return this.context.Alignments.ToList();
         }
 
-        public void CreateCharacter(Alignment newAlignment)
+        public void CreateAlignment(Alignment newAlignment)
         {
             this.context.Alignments.Add(newAlignment);
             this.context.SaveChanges();
         }
 
-        public Alignment GetAbiltyScoreById(int id)
+        public Alignment GetAlignmentById(int id)
         {
             return this.context.Alignments.Find(id);
         }
 
-        public void Update(Alignment toUpdate)
+        public void UpdateAlignment(Alignment toUpdate)
         {
             this.context.Entry(toUpdate).State = EntityState.Modified;
             this.context.SaveChanges();

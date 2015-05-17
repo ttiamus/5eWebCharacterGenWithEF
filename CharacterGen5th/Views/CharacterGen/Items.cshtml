@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CharacterGen5th.Models.Item>
+﻿@model CharacterGen5th.Models.ViewModels.ItemsViewModel
 
 @{
     ViewBag.Title = "Items";
@@ -24,18 +24,88 @@
             <td>@i</td>
             <td><input type="text" /></td>
             <td>
-                <select>
-                    @foreach (var item in Model)
+                <select class="ItemSelector">
+                    <option>Select An Item</option>
+                    @foreach (var item in Model.ItemsGeneral)
                     {
                         <option>@Html.DisplayFor(model => item.Name)</option>
                     }
+                </select>
+            </td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+    }
+</table>
 
+ 
+<table>
+
+    <tr>
+        <th></th>
+        <th>Weapon</th>
+        <th>Damage</th>
+        <th>Damage Type</th>
+        <th>Weight</th>
+        <th>Cost</th>
+    </tr>
+
+    @for (var i = 1; i <= 5; i++)
+    {
+        <tr>
+            <td>@i</td>
+            <td>
+                <select class="WeaponSelector">
+                    <option>Select A Weapon</option>
+                    @foreach (var weapon in Model.Weapons)
+                    {
+                        <option>@Html.DisplayFor(model => weapon.Name)</option>
+                    }
+                </select>
+            </td>
+
+            <td>1d6</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+    }
+</table>
+
+<table>
+
+    <tr>
+        <th></th>
+        <th>Armor</th>
+        <th>AC Bonus</th>
+        <th>Armor Type</th>
+        <th>Max Dex Bonus</th>
+        <th>Requires Str</th>
+        <th>Stealth Disadvantage</th>
+        <th>Weight</th>
+        <th>Cost</th>
+    </tr>
+
+    @for (var i = 1; i <= 5; i++)
+    {
+        <tr>
+            <td>@i</td>
+            <td>
+                <select class="ArmorSelector">
+                    <option>Select An Armor</option>
+                    @foreach (var armor in Model.Armors)
+                    {
+                        <option>@Html.DisplayFor(model => armor.Name)</option>
+                    }
                 </select>
             </td>
 
             <td>0</td>
             <td>0</td>
-            
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
         </tr>
     }
 </table>

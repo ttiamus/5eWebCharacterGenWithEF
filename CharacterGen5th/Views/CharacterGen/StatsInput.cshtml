@@ -108,7 +108,10 @@
                 <span>
                     <label>Race</label>
                     <select id="raceSelection">
-                        <option>Race</option>
+                        @foreach(var race in Model.Races)
+                        {
+                            <option>@race.RaceName</option>
+                        }
                     </select>
                 </span>
             </div>
@@ -117,7 +120,10 @@
                 <span>
                     <label>Alignment</label>
                     <select id="alignmentSelection">
-                        <option>Alignment</option>
+                        @foreach (var alignment in Model.Alignments)
+                        {
+                            <option>@alignment.Alignment_Name</option>
+                        }
                     </select>
                 </span>
 

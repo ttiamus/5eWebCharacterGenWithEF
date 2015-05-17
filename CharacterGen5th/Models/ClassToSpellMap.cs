@@ -20,5 +20,7 @@ namespace CharacterGen5th.Models
         [ForeignKey("Spell_Id")]
         public Spell Spell { get; set; }
         public int Spell_Id { get; set; }
+
+        public int SpellLevel { get; set; }
     }
 }
