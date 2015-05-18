@@ -1,0 +1,154 @@
+﻿@model CharacterGen5th.Models.ViewModels.DemographicViewModel
+
+@{
+    ViewBag.Title = "Stats";
+}
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+</script>
+
+<html>
+<body>
+
+    <div id="scores">
+        <table id="scoreTable" style="width:100%">
+            <tr>
+                <td class="width5Percent"></td>
+                <td class="width10Percent">Base Score</td>
+                <td class="width19Percent">Bonus</td>
+                <td class="width19Percent">Racial Mod</td>
+                <td class="width19Percent">Total</td>
+                <td class="width19Percent">Points</td>
+            </tr>
+
+            <tr>
+                <td>STR</td>
+                <td>@Html.TextBox("strScore", @Model.Str)</td>
+                <td>@Html.Label("0", new { @class = "statsLabel", @id ="strBonus"})</td>
+                <td>@Html.Label("0", new { @class = "statsLabel", @id = "strRacialMod" })</td>
+                <td>@Html.Label("0", new { @class = "statsLabel", @id = "strTotal" })</td>
+                <td>@Html.Label("2", new { @class = "statsLabel", @id = "strPoints" })</td>
+            </tr>
+
+            <tr>
+                <td>DEX</td>
+                <td>@Html.TextBox("dexScore", @Model.Dex)</td>
+                <td>@Html.Label("0", new { @class = "statsLabel", @id = "dexBonus" })</td>
+                <td>@Html.Label("0", new { @class = "statsLabel", @id = "dexRacialMod" })</td>
+                <td>@Html.Label("0", new { @class = "statsLabel", @id = "dexTotal" })</td>
+                <td>@Html.Label("2", new { @class = "statsLabel", @id = "dexPoints" })</td>
+            </tr>
+
+            <tr>
+                <td>CON</td>
+                <td>@Html.TextBox("conScore", @Model.Con)</td>
+                <td>@Html.Label("0", new { @class = "statsLabel", @id = "conBonus" })</td>
+                <td>@Html.Label("0", new { @class = "statsLabel", @id = "conRacialMod" })</td>
+                <td>@Html.Label("0", new { @class = "statsLabel", @id = "conTotal" })</td>
+                <td>@Html.Label("2", new { @class = "statsLabel", @id = "conPoints" })</td>
+            </tr>
+
+            <tr>
+                <td>INT</td>
+                <td>@Html.TextBox("intScore", @Model.Int)</td>
+                <td>@Html.Label("0", new { @class = "statsLabel", @id = "intBonus" })</td>
+                <td>@Html.Label("0", new { @class = "statsLabel", @id = "intRacialMod" })</td>
+                <td>@Html.Label("0", new { @class = "statsLabel", @id = "intTotal" })</td>
+                <td>@Html.Label("2", new { @class = "statsLabel", @id = "intPoints" })</td>
+            </tr>
+
+            <tr>
+                <td>WIS</td>
+                <td>@Html.TextBox("wisScore", @Model.Wis)</td>
+                <td>@Html.Label("0", new { @class = "statsLabel", @id = "wisBonus" })</td>
+                <td>@Html.Label("0", new { @class = "statsLabel", @id = "wisRacialMod" })</td>
+                <td>@Html.Label("0", new { @class = "statsLabel", @id = "wisTotal" })</td>
+                <td>@Html.Label("2", new { @class = "statsLabel", @id = "wisPoints" })</td>
+            </tr>
+
+            <tr>
+                <td>CHA</td>
+                <td>@Html.TextBox("chaScore", @Model.Cha)</td>
+                <td>@Html.Label("0", new { @class = "statsLabel", @id = "chaBonus" })</td>
+                <td>@Html.Label("0", new { @class = "statsLabel", @id = "chaRacialMod" })</td>
+                <td>@Html.Label("0", new { @class = "statsLabel", @id = "chaTotal" })</td>
+                <td>@Html.Label("2", new { @class = "statsLabel", @id = "chaPoints" })</td>
+            </tr>
+
+            <tr>
+                <td colspan="5"></td>
+                <td>@Html.Label("6/27", new { @class = "statsLabel", @id = "pointBuyTotal" })</td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="demographic">
+        <label>Player Name</label><input type="text">
+        <label>Character Name</label><input type="text">
+        <label>Age</label><input type="text">
+            
+        <label>Gender</label>    
+        <select>
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+
+        <label>Height</label><input type="text">
+        <label>Weight</label><input type="text">
+        <label>Eyes</label><input type="text">
+        <label>Hair</label><input type="text">
+        <label>Skin</label><input type="text">
+        <label>Wealth</label><input type="text">
+    </div>
+    
+    <div id="race">
+        <span>
+            <label>Race</label>
+            <select id="raceSelection">
+                <option>Choose A Race</option>
+                @foreach(var race in Model.Races)
+                {
+                    <option value="@race.Race_Id">@race.RaceName</option>
+                }
+            </select>
+        </span>
+    </div>
+
+    <div>
+        <div id="alignment">
+            <span>
+                <label>Alignment</label>
+                <select id="alignmentSelection">
+                    <option>Choose An Alignment</option>
+                    @foreach (var alignment in Model.Alignments)
+                    {
+                        <option value="@alignment.Alignment_Id">@alignment.Alignment_Name</option>
+                    }
+                </select>
+            </span>
+
+            <span>
+                <label>Diety</label>
+                <select id="DietySelection">
+                    <option>Choose A Diety</option>
+                    @foreach (var god in Model.Gods)
+                    {
+                        <option value="@god.God_Id">@god.Name</option>
+                    }
+                </select>
+            </span>
+        </div>
+    </div>
+
+    <div class="float-right">
+        <div id="RaceSummary">
+            <p>This is the Race Summary</p>
+        </div>
+
+        <div id="GodSummary">
+            <p>this is the god summary</p>
+        </div>
+    </div>
+</body>
+</html>

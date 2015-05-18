@@ -28,7 +28,7 @@
                     <option>Select An Item</option>
                     @foreach (var item in Model.ItemsGeneral)
                     {
-                        <option>@Html.DisplayFor(model => item.Name)</option>
+                        <option value="@item.Item_Id">@Html.DisplayFor(model => item.Name)</option>
                     }
                 </select>
             </td>
@@ -38,6 +38,35 @@
     }
 </table>
 
+<table>
+
+    <tr>
+        <th></th>
+        <th>Quantity</th>
+        <th>Ammunition</th>
+        <th>Weight</th>
+        <th>Cost</th>
+    </tr>
+
+    @for (var i = 1; i <= 4; i++)
+    {
+        <tr>
+            <td>@i</td>
+            <td><input type="text" /></td>
+            <td>
+                <select class="AmmunitionSelector">
+                    <option>Select An Item</option>
+                    @foreach (var item in Model.ItemsAmunition)
+                    {
+                        <option value="@item.Item_Id">@Html.DisplayFor(model => item.Name)</option>
+                    }
+                </select>
+            </td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+    }
+</table>
  
 <table>
 
@@ -59,7 +88,7 @@
                     <option>Select A Weapon</option>
                     @foreach (var weapon in Model.Weapons)
                     {
-                        <option>@Html.DisplayFor(model => weapon.Name)</option>
+                        <option value="@weapon.Weapon_Id">@Html.DisplayFor(model => weapon.Name)</option>
                     }
                 </select>
             </td>
@@ -94,7 +123,7 @@
                     <option>Select An Armor</option>
                     @foreach (var armor in Model.Armors)
                     {
-                        <option>@Html.DisplayFor(model => armor.Name)</option>
+                        <option value="@armor.Armor_Id">@Html.DisplayFor(model => armor.Name)</option>
                     }
                 </select>
             </td>

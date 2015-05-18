@@ -23,9 +23,9 @@ namespace CharacterGen5th.Controllers
         private IArmorRepository ArmorRepo;
         private IWeaponRepository WeaponRepo;
         private IAlignmentRepository AlignmentRepo;
-        //private IGodRepository GodRepo
+        private IGodRepository GodRepo;
 
-        public CharacterGenController(IItemRepository items, IAbilityScoreRepository abilityScores, ISkillRepository skills, IClassRepository classes, IRaceRepository races, IArmorRepository armorRepo, IWeaponRepository weaponRepo, IAlignmentRepository alignmentRepo)
+        public CharacterGenController(IItemRepository items, IAbilityScoreRepository abilityScores, ISkillRepository skills, IClassRepository classes, IRaceRepository races, IArmorRepository armorRepo, IWeaponRepository weaponRepo, IAlignmentRepository alignmentRepo, IGodRepository godRepo)
         {
             //Initialize IRepositories here
             this.AbilityScoreRepo = abilityScores;
@@ -36,7 +36,7 @@ namespace CharacterGen5th.Controllers
             this.ArmorRepo = armorRepo;
             this.WeaponRepo = weaponRepo;
             this.AlignmentRepo = alignmentRepo;
-
+            this.GodRepo = godRepo;
         }
 
 
@@ -52,10 +52,10 @@ namespace CharacterGen5th.Controllers
         {
             DemographicViewModel demoVM = new DemographicViewModel();
             demoVM.Races = RaceRepo.GetRaces().OrderBy(x => x.RaceName);
-            demoVM.Alignments = AlignmentRepo.GetAlignments();//.OrderBy(x => x.Alignment_Name);
-            //demoVM.Gods = 
+            demoVM.Alignments = AlignmentRepo.GetAlignments().OrderBy(x => x.Alignment_Name);
+            demoVM.Gods = GodRepo.GetGods().OrderBy(x => x.Name);
 
-            return View("StatsInput", demoVM);
+            return View("Demographic", demoVM);
         }
 
         // GET: /CharacterGen/Items

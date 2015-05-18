@@ -45,6 +45,7 @@ namespace CharacterGen5th.App_Start
             //container.RegisterType<ICharacterRepository, CharacterRepository>();
             container.RegisterType<IClassRepository, ClassRepository>();
             container.RegisterType<IFeatRepository, FeatRepository>();
+            container.RegisterType<IGodRepository, GodRepository>();
             container.RegisterType<IItemRepository, ItemRepository>();
             container.RegisterType<ILanguageRepository, LanguageRepository>();
             container.RegisterType<IRaceRepository, RaceRepository>();

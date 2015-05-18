@@ -208,6 +208,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Bootstraper\Models\IGodRepository.cs" />
     <Compile Include="Bootstraper\Models\IBackgroundToItemMappingRepository.cs" />
     <Compile Include="Bootstraper\Models\IBackgroundToLanguageMappingRepository.cs" />
     <Compile Include="Bootstraper\Models\IBackgroundToSkillMappingRepository.cs" />
@@ -332,6 +333,7 @@
     <Compile Include="Repositories\ClassToSpellMappingRepository.cs" />
     <Compile Include="Repositories\ClassToWeaponMappingRepository.cs" />
     <Compile Include="Repositories\FeatRepository.cs" />
+    <Compile Include="Repositories\GodRepository.cs" />
     <Compile Include="Repositories\ItemRepository.cs" />
     <Compile Include="Repositories\LanguageRepository.cs" />
     <Compile Include="Repositories\RacePropertyRepository.cs" />
@@ -479,7 +481,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\CharacterGen\StatsInput.cshtml" />
+    <Content Include="Views\CharacterGen\Demographic.cshtml" />
     <Content Include="Views\CharacterGen\Items.cshtml" />
     <Content Include="Views\CharacterGen\Skills.cshtml" />
     <Content Include="Views\CharacterGen\Class.cshtml" />
