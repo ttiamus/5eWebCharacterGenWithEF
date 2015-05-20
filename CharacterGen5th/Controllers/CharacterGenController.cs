@@ -88,5 +88,18 @@ namespace CharacterGen5th.Controllers
             return View("ClassOptions");
         }
 
+        // GET: /CharacterGen/RaceChosen
+        public ActionResult RaceChosen(int id)
+        {
+            var data = RaceRepo.FindRaceById(id);
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
+
+        // GET: /CharacterGen/RaceChosen
+        public ActionResult GodChosen(int id)
+        {
+            var data = GodRepo.GetGodById(id);
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
     }
 }

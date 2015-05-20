@@ -41,9 +41,6 @@ Begin
 	insert into Races values ('Human, Variant', 2, 30, 5);
 	insert into Races values ('Gnome, Forest', 1, 25, 6);
 	insert into Races values ('Gnome, Rock', 1, 25, 6);	
-	insert into Races values ('No Subrace', 2, 30, 7); 
-	insert into Races values ('No Subrace', 2, 30, 8); 
-	insert into Races values ('No Subrace', 2, 30, 9); 
 end;
 
 

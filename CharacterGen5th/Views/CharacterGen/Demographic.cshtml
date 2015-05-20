@@ -106,7 +106,7 @@
         <span>
             <label>Race</label>
             <select id="raceSelection">
-                <option>Choose A Race</option>
+                <option value="0">Choose A Race</option>
                 @foreach(var race in Model.Races)
                 {
                     <option value="@race.Race_Id">@race.RaceName</option>
@@ -120,7 +120,7 @@
             <span>
                 <label>Alignment</label>
                 <select id="alignmentSelection">
-                    <option>Choose An Alignment</option>
+                    <option value="0">Choose An Alignment</option>
                     @foreach (var alignment in Model.Alignments)
                     {
                         <option value="@alignment.Alignment_Id">@alignment.Alignment_Name</option>
@@ -130,8 +130,8 @@
 
             <span>
                 <label>Diety</label>
-                <select id="DietySelection">
-                    <option>Choose A Diety</option>
+                <select id="godSelection">
+                    <option value="0">Choose A Diety</option>
                     @foreach (var god in Model.Gods)
                     {
                         <option value="@god.God_Id">@god.Name</option>

@@ -14,4 +14,13 @@ BEGIN
 	exec InsertItems
 	exec InsertRaces
 	exec InsertRaceProperties
+	exec InsertClasses
+	exec InsertItems
+	exec InsertArmors
+	exec InsertWeapons
+	exec InsertWeaponProperties
+	exec InsertSpells
+	exec InsertGods
+	exec InsertDomains
+	exec InsertBackgrounds
 END;
