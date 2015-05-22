@@ -1,153 +1,130 @@
 ﻿@model CharacterGen5th.Models.ViewModels.DemographicViewModel
 
 @{
-    ViewBag.Title = "Stats";
+    ViewBag.Title = "Demographic";
 }
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script>
-</script>
-
+<script src="~/Scripts/DemographicController.js"></script>
 <html>
-<body>
+<body ng-app="demographic">
+    <div ng-controller="demographicController">
+        <div id="scores">
+            <table id="scoreTable" style="width:100%">
+                <tr>
+                    <td class="width5Percent"></td>
+                    <td class="width10Percent">Base Score</td>
+                    <td class="width19Percent">Bonus</td>
+                    <td class="width19Percent">Racial Mod</td>
+                    <td class="width19Percent">Total</td>
+                    <td class="width19Percent">Points</td>
+                </tr>
 
-    <div id="scores">
-        <table id="scoreTable" style="width:100%">
-            <tr>
-                <td class="width5Percent"></td>
-                <td class="width10Percent">Base Score</td>
-                <td class="width19Percent">Bonus</td>
-                <td class="width19Percent">Racial Mod</td>
-                <td class="width19Percent">Total</td>
-                <td class="width19Percent">Points</td>
-            </tr>
+                <tr>
+                    <td>STR</td>
+                    <td><input class="statsLabel" type="text" ng-model="strScore" /></td>
+                    <td><label class="statsLabel" ng-model="strBonus"></label></td>
+                    <td><label class="statsLabel" ng-model="strRacialMod"></label></td>
+                    <td><label class="statsLabel" ng-model="strTotal"></label></td>
+                    <td><label class="statsLabel" ng-model="strPoints"></label></td>
+                </tr>
 
-            <tr>
-                <td>STR</td>
-                <td>@Html.TextBox("strScore", @Model.Str)</td>
-                <td>@Html.Label("0", new { @class = "statsLabel", @id ="strBonus"})</td>
-                <td>@Html.Label("0", new { @class = "statsLabel", @id = "strRacialMod" })</td>
-                <td>@Html.Label("0", new { @class = "statsLabel", @id = "strTotal" })</td>
-                <td>@Html.Label("2", new { @class = "statsLabel", @id = "strPoints" })</td>
-            </tr>
+                <tr>
+                    <td>DEX</td>
+                    <td><input class="statsLabel" type="text" ng-model="strScore" /></td>
+                    <td><label class="statsLabel" ng-model="dexBonus"></label></td>
+                    <td><label class="statsLabel" ng-model="dexRacialMod"></label></td>
+                    <td><label class="statsLabel" ng-model="dexTotal"></label></td>
+                    <td><label class="statsLabel" ng-model="dexPoints"></label></td>
+                </tr>
 
-            <tr>
-                <td>DEX</td>
-                <td>@Html.TextBox("dexScore", @Model.Dex)</td>
-                <td>@Html.Label("0", new { @class = "statsLabel", @id = "dexBonus" })</td>
-                <td>@Html.Label("0", new { @class = "statsLabel", @id = "dexRacialMod" })</td>
-                <td>@Html.Label("0", new { @class = "statsLabel", @id = "dexTotal" })</td>
-                <td>@Html.Label("2", new { @class = "statsLabel", @id = "dexPoints" })</td>
-            </tr>
+                <tr>
+                    <td>CON</td>
+                    <td><input class="statsLabel" type="text" ng-model="strScore" /></td>
+                    <td><label class="statsLabel" ng-model="conBonus"></label></td>
+                    <td><label class="statsLabel" ng-model="conRacialMod"></label></td>
+                    <td><label class="statsLabel" ng-model="conTotal"></label></td>
+                    <td><label class="statsLabel" ng-model="conPoints"></label></td>
+                </tr>
 
-            <tr>
-                <td>CON</td>
-                <td>@Html.TextBox("conScore", @Model.Con)</td>
-                <td>@Html.Label("0", new { @class = "statsLabel", @id = "conBonus" })</td>
-                <td>@Html.Label("0", new { @class = "statsLabel", @id = "conRacialMod" })</td>
-                <td>@Html.Label("0", new { @class = "statsLabel", @id = "conTotal" })</td>
-                <td>@Html.Label("2", new { @class = "statsLabel", @id = "conPoints" })</td>
-            </tr>
+                <tr>
+                    <td>INT</td>
+                    <td><input class="statsLabel" type="text" ng-model="strScore" /></td>
+                    <td><label class="statsLabel" ng-model="intBonus"></label></td>
+                    <td><label class="statsLabel" ng-model="intRacialMod"></label></td>
+                    <td><label class="statsLabel" ng-model="intTotal"></label></td>
+                    <td><label class="statsLabel" ng-model="intPoints"></label></td>
+                </tr>
 
-            <tr>
-                <td>INT</td>
-                <td>@Html.TextBox("intScore", @Model.Int)</td>
-                <td>@Html.Label("0", new { @class = "statsLabel", @id = "intBonus" })</td>
-                <td>@Html.Label("0", new { @class = "statsLabel", @id = "intRacialMod" })</td>
-                <td>@Html.Label("0", new { @class = "statsLabel", @id = "intTotal" })</td>
-                <td>@Html.Label("2", new { @class = "statsLabel", @id = "intPoints" })</td>
-            </tr>
+                <tr>
+                    <td>WIS</td>
+                    <td><input class="statsLabel" type="text" ng-model="strScore" /></td>
+                    <td><label class="statsLabel" ng-model="wisBonus"></label></td>
+                    <td><label class="statsLabel" ng-model="wisRacialMod"></label></td>
+                    <td><label class="statsLabel" ng-model="wisTotal"></label></td>
+                    <td><label class="statsLabel" ng-model="wisPoints"></label></td>
+                </tr>
 
-            <tr>
-                <td>WIS</td>
-                <td>@Html.TextBox("wisScore", @Model.Wis)</td>
-                <td>@Html.Label("0", new { @class = "statsLabel", @id = "wisBonus" })</td>
-                <td>@Html.Label("0", new { @class = "statsLabel", @id = "wisRacialMod" })</td>
-                <td>@Html.Label("0", new { @class = "statsLabel", @id = "wisTotal" })</td>
-                <td>@Html.Label("2", new { @class = "statsLabel", @id = "wisPoints" })</td>
-            </tr>
+                <tr>
+                    <td>CHA</td>
+                    <td><input class="statsLabel" type="text" ng-model="strScore" /></td>
+                    <td><label class="statsLabel" ng-model="chaBonus"></label></td>
+                    <td><label class="statsLabel" ng-model="chaRacialMod"></label></td>
+                    <td><label class="statsLabel" ng-model="chaTotal"></label></td>
+                    <td><label class="statsLabel" ng-model="chaPoints"></label></td>
+                </tr>
 
-            <tr>
-                <td>CHA</td>
-                <td>@Html.TextBox("chaScore", @Model.Cha)</td>
-                <td>@Html.Label("0", new { @class = "statsLabel", @id = "chaBonus" })</td>
-                <td>@Html.Label("0", new { @class = "statsLabel", @id = "chaRacialMod" })</td>
-                <td>@Html.Label("0", new { @class = "statsLabel", @id = "chaTotal" })</td>
-                <td>@Html.Label("2", new { @class = "statsLabel", @id = "chaPoints" })</td>
-            </tr>
+                <tr>
+                    <td colspan="5"></td>
+                    <td><label class="statsLabel" ng-model="pointBuyTotal">6/27</label></td>
+                </tr>
+            </table>
+        </div>
 
-            <tr>
-                <td colspan="5"></td>
-                <td>@Html.Label("6/27", new { @class = "statsLabel", @id = "pointBuyTotal" })</td>
-            </tr>
-        </table>
-    </div>
+        <div id="demographic">
+            <label>Player Name</label><input type="text" ng-model="playerName">
+            <label>Character Name</label><input type="text" ng-model="characterName">
+            <label>Age</label><input type="text" ng-model="age">
 
-    <div id="demographic">
-        <label>Player Name</label><input type="text">
-        <label>Character Name</label><input type="text">
-        <label>Age</label><input type="text">
-            
-        <label>Gender</label>    
-        <select>
-            <option>Male</option>
-            <option>Female</option>
-        </select>
-
-        <label>Height</label><input type="text">
-        <label>Weight</label><input type="text">
-        <label>Eyes</label><input type="text">
-        <label>Hair</label><input type="text">
-        <label>Skin</label><input type="text">
-        <label>Wealth</label><input type="text">
-    </div>
-    
-    <div id="race">
-        <span>
-            <label>Race</label>
-            <select id="raceSelection">
-                <option value="0">Choose A Race</option>
-                @foreach(var race in Model.Races)
-                {
-                    <option value="@race.Race_Id">@race.RaceName</option>
-                }
+            <label>Gender</label>
+            <select ng-model="gender" ng-options="gender for gender in genders">
             </select>
-        </span>
-    </div>
 
-    <div>
-        <div id="alignment">
-            <span>
-                <label>Alignment</label>
-                <select id="alignmentSelection">
-                    <option value="0">Choose An Alignment</option>
-                    @foreach (var alignment in Model.Alignments)
-                    {
-                        <option value="@alignment.Alignment_Id">@alignment.Alignment_Name</option>
-                    }
-                </select>
-            </span>
-
-            <span>
-                <label>Diety</label>
-                <select id="godSelection">
-                    <option value="0">Choose A Diety</option>
-                    @foreach (var god in Model.Gods)
-                    {
-                        <option value="@god.God_Id">@god.Name</option>
-                    }
-                </select>
-            </span>
-        </div>
-    </div>
-
-    <div class="float-right">
-        <div id="RaceSummary">
-            <p>This is the Race Summary</p>
+            <label>Height</label><input type="text" ng-model="height">
+            <label>Weight</label><input type="text" ng-model="weight">
+            <label>Eyes</label><input type="text" ng-model="Eyes">
+            <label>Hair</label><input type="text" ng-model="hair">
+            <label>Skin</label><input type="text" ng-model="skin">
+            <label>Wealth</label><input type="text" ng-model="wealth">
         </div>
 
-        <div id="GodSummary">
-            <p>this is the god summary</p>
+        <div id="race">
+            <span>
+                <label>Race</label>
+                <select ng-model="race" ng-options="race for race in races"></select>
+            </span>
+        </div>
+
+        <div>
+            <div id="alignment">
+                <span>
+                    <label>Alignment</label>
+                    <select ng-model="alignment" ng-options="alignment for alignment in alignments"></select>
+                </span>
+
+                <span>
+                    <label>Diety</label>
+                    <select ng-model="god" ng-options="god for god in gods"></select>
+                </span>
+            </div>
+        </div>
+
+        <div class="float-right">
+            <div id="RaceSummary">
+                <p>This is the Race Summary</p>
+            </div>
+
+            <div id="GodSummary">
+                <p>this is the god summary</p>
+            </div>
         </div>
     </div>
 </body>

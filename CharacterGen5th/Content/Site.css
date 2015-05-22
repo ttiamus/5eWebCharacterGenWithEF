@@ -450,7 +450,7 @@ input[type="checkbox"].input-validation-error {
 }
 
 
-
+/*
 #scores {
     float: left;
     border: none;
@@ -511,11 +511,11 @@ td > input[type="text"] {
 .centerLabel
 {
     display: block; 
-    min-width: 100%; /* for the latest browsers which support min-height */
+    min-width: 100%; 
     min-height: 100%;
     text-align: center;
     padding-top:10px;
-    height: auto !important; /* for newer IE versions */
+    height: auto !important;
     height: 100%;
     
 }
@@ -523,11 +523,11 @@ td > input[type="text"] {
 .statsLabel 
 {
     display: block; 
-    min-width: 100%; /* for the latest browsers which support min-height */
+    min-width: 100%; 
     min-height: 100%;
     text-align: center;
     padding-top:10px;
-    height: auto !important; /* for newer IE versions */
+    height: auto !important; 
     height: 100%;
     font-size:22px;
 }
@@ -550,4 +550,4 @@ td > input[type="text"] {
 .width19Percent
 {
     width:19%;
-}
+}*/
