@@ -19,8 +19,6 @@ namespace CharacterGen5th.Models
         [Required()]
         public string RaceName { get; set; }
 
-        public string Type { get; set; }
-
         [Required()]
         public virtual IEnumerable<RaceToLanguagesMap> AvailableLanguages { get; set; }
 
