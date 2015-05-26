@@ -1,6 +1,4 @@
-﻿@model CharacterGen5th.Models.ViewModels.DemographicViewModel
-
-@{
+﻿@{
     ViewBag.Title = "Demographic";
 }
 <script src="~/Scripts/DemographicController.js"></script>
@@ -20,61 +18,61 @@
 
                 <tr>
                     <td>STR</td>
-                    <td><input class="statsLabel" type="text" ng-model="str.score" /></td>
-                    <td><label class="statsLabel" ng-model="strBonus">{{str.bonus}}</label></td>
-                    <td><label class="statsLabel" ng-model="strRacialMod">{{str.racialMod}}</label></td>
-                    <td><label class="statsLabel" ng-model="strTotal">{{str.total}}</label></td>
-                    <td><label class="statsLabel" ng-model="strPoints">{{str.points}}</label></td>
+                    <td><input class="statsLabel" type="text" ng-model="str.score" ng-change="UpdateStat(str)" /></td>
+                    <td><label class="statsLabel">{{str.bonus}}</label></td>
+                    <td><label class="statsLabel">{{str.racialMod}}</label></td>
+                    <td><label class="statsLabel">{{str.total}}</label></td>
+                    <td><label class="statsLabel">{{str.points}}</label></td>
                 </tr>
 
                 <tr>
                     <td>DEX</td>
-                    <td><input class="statsLabel" type="text" ng-model="dex.score" /></td>
-                    <td><label class="statsLabel" ng-model="dex.bonus"></label></td>
-                    <td><label class="statsLabel" ng-model="dex.racialMod"></label></td>
-                    <td><label class="statsLabel" ng-model="dex.total"></label></td>
-                    <td><label class="statsLabel" ng-model="dex.points"></label></td>
+                    <td><input class="statsLabel" type="text" ng-model="dex.score" ng-change="UpdateStat(dex)" /></td>
+                    <td><label class="statsLabel">{{dex.bonus}}</label></td>
+                    <td><label class="statsLabel">{{dex.racialMod}}</label></td>
+                    <td><label class="statsLabel">{{dex.total}}</label></td>
+                    <td><label class="statsLabel">{{dex.points}}</label></td>
                 </tr>
 
                 <tr>
                     <td>CON</td>
-                    <td><input class="statsLabel" type="text" ng-model="con.score" /></td>
-                    <td><label class="statsLabel" ng-model="con.bonus"></label></td>
-                    <td><label class="statsLabel" ng-model="con.racialMod"></label></td>
-                    <td><label class="statsLabel" ng-model="con.total"></label></td>
-                    <td><label class="statsLabel" ng-model="con.points"></label></td>
+                    <td><input class="statsLabel" type="text" ng-model="con.score" ng-change="UpdateStat(con)" /></td>
+                    <td><label class="statsLabel">{{con.bonus}}</label></td>
+                    <td><label class="statsLabel">{{con.racialMod}}</label></td>
+                    <td><label class="statsLabel">{{con.total}}</label></td>
+                    <td><label class="statsLabel">{{con.points}}</label></td>
                 </tr>
 
                 <tr>
                     <td>INT</td>
-                    <td><input class="statsLabel" type="text" ng-model="int.score" /></td>
-                    <td><label class="statsLabel" ng-model="int.bonus"></label></td>
-                    <td><label class="statsLabel" ng-model="int.racialMod"></label></td>
-                    <td><label class="statsLabel" ng-model="int.total"></label></td>
-                    <td><label class="statsLabel" ng-model="int.points"></label></td>
+                    <td><input class="statsLabel" type="text" ng-model="int.score" ng-change="UpdateStat(int)" /></td>
+                    <td><label class="statsLabel">{{int.bonus}}</label></td>
+                    <td><label class="statsLabel">{{int.racialMod}}</label></td>
+                    <td><label class="statsLabel">{{int.total}}</label></td>
+                    <td><label class="statsLabel">{{int.points}}</label></td>
                 </tr>
 
                 <tr>
                     <td>WIS</td>
-                    <td><input class="statsLabel" type="text" ng-model="wis.score" /></td>
-                    <td><label class="statsLabel" ng-model="wisB.bnus"></label></td>
-                    <td><label class="statsLabel" ng-model="wis.racialMod"></label></td>
-                    <td><label class="statsLabel" ng-model="wis.total"></label></td>
-                    <td><label class="statsLabel" ng-model="wis.points"></label></td>
+                    <td><input class="statsLabel" type="text" ng-model="wis.score" ng-change="UpdateStat(wis)" /></td>
+                    <td><label class="statsLabel">{{wis.bonus}}</label></td>
+                    <td><label class="statsLabel">{{wis.racialMod}}</label></td>
+                    <td><label class="statsLabel">{{wis.total}}</label></td>
+                    <td><label class="statsLabel">{{wis.points}}</label></td>
                 </tr>
 
                 <tr>
                     <td>CHA</td>
-                    <td><input class="statsLabel" type="text" ng-model="cha.score" /></td>
-                    <td><label class="statsLabel" ng-model="cha.bonus"></label></td>
-                    <td><label class="statsLabel" ng-model="cha.racialMod"></label></td>
-                    <td><label class="statsLabel" ng-model="cha.total"></label></td>
-                    <td><label class="statsLabel" ng-model="cha.points"></label></td>
+                    <td><input class="statsLabel" type="text" ng-model="cha.score" ng-change="UpdateStat(cha)" /></td>
+                    <td><label class="statsLabel">{{cha.bonus}}</label></td>
+                    <td><label class="statsLabel">{{cha.racialMod}}</label></td>
+                    <td><label class="statsLabel">{{cha.total}}</label></td>
+                    <td><label class="statsLabel">{{cha.points}}</label></td>
                 </tr>
 
                 <tr>
                     <td colspan="5"></td>
-                    <td><label class="statsLabel" ng-model="pointBuyTotal">{{pointBuyTotal}}</label></td>
+                    <td><label class="statsLabel" ng-model="pointBuyTotal">{{pointsRemaining}}</label></td>
                 </tr>
             </table>
         </div>
@@ -99,7 +97,7 @@
         <div id="race">
             <span>
                 <label>Race</label>
-                <select ng-model="race" ng-options="race for race in races"></select>
+                <select ng-model="race" ng-options="race.RaceName for race in races"></select>
             </span>
         </div>
 
@@ -107,23 +105,30 @@
             <div id="alignment">
                 <span>
                     <label>Alignment</label>
-                    <select ng-model="alignment" ng-options="alignment for alignment in alignments"></select>
+                    <select ng-model="alignment" ng-change="UpdateAvailableGods(alignment.Alignment_Id)" ng-options="alignment.Alignment_Name for alignment in alignments"></select>
                 </span>
 
                 <span>
                     <label>Diety</label>
-                    <select ng-model="god" ng-options="god for god in gods"></select>
+                    <select ng-model="god" ng-options="god.Name for god in gods"></select>
                 </span>
             </div>
         </div>
 
         <div class="float-right">
             <div id="RaceSummary">
-                <p>This is the Race Summary</p>
+                <label>Name: {{race.RaceName}}</label> <br />
+                <label>Size: {{race.Size}}</label> <br />
+                <label>Speed: {{race.Speed}}</label> <br />
+                <label>Properties: {{race.RaceProperties}}</label> <br />
             </div>
 
             <div id="GodSummary">
-                <p>this is the god summary</p>
+                <label>Name: {{god.Name}}</label> <br/>
+                <label>Title: {{god.Title}}</label> <br />
+                <label>Symbol: {{god.Symbol}}</label> <br />
+                <label>Alignment: {{god.Alignment}}</label> <br />
+                <label>Domains: {{god.Domains}}</label> <br />
             </div>
         </div>
     </div>

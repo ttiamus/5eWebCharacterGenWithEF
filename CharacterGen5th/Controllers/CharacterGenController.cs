@@ -43,19 +43,14 @@ namespace CharacterGen5th.Controllers
         //
         // GET: /CharacterGen/
         public ActionResult Index()
-        { 
+        {
             return View();
         }
 
         // GET: /CharacterGen/StatsInput
         public ActionResult StatsInput()
         {
-            DemographicViewModel demoVM = new DemographicViewModel();
-            demoVM.Races = RaceRepo.GetRaces().OrderBy(x => x.RaceName);
-            demoVM.Alignments = AlignmentRepo.GetAlignments().OrderBy(x => x.Alignment_Name);
-            demoVM.Gods = GodRepo.GetGods().OrderBy(x => x.Name);
-
-            return View("Demographic", demoVM);
+            return View("Demographic");
         }
 
         // GET: /CharacterGen/Items
@@ -86,6 +81,25 @@ namespace CharacterGen5th.Controllers
         public ActionResult ClassOptions()
         {
             return View("ClassOptions");
+        }
+
+        // GET: /CharacterGen/DemographicInit
+        public ActionResult DemographicInit()
+        {
+            var demoViewModel = new DemographicViewModel();
+            demoViewModel.Races = RaceRepo.GetRaces();
+            demoViewModel.Gods = GodRepo.GetGods();
+            demoViewModel.Alignments = AlignmentRepo.GetAlignments();
+
+            return Json(demoViewModel, JsonRequestBehavior.AllowGet);
+        }
+
+        // GET: /CharacterGen/DemographicInit
+        public ActionResult GetGodsByAlignment(int alignmentId)
+        {
+            var godList = GodRepo.GetGodsByAlignment(alignmentId);
+
+            return Json(godList, JsonRequestBehavior.AllowGet);
         }
 
         // GET: /CharacterGen/RaceChosen

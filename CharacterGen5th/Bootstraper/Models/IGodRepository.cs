@@ -9,6 +9,7 @@ namespace CharacterGen5th.Bootstraper.Models
     public interface IGodRepository
     {
         IEnumerable<God> GetGods();
+        IEnumerable<God> GetGodsByAlignment(int alignmentId);
         void CreateGod(God newGod);
         God GetGodById(int id);
         void UpdateGod(God toUpdate);

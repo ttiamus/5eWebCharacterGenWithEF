@@ -19,6 +19,11 @@ namespace CharacterGen5th.Repositories
             return this.context.Gods.ToList();
         }
 
+        public IEnumerable<God> GetGodsByAlignment(int alignmentId)
+        {
+            return this.context.Gods.Where(x => x.Alignment_Id == alignmentId).ToList();
+        }
+
         public void CreateGod(God newGod)
         {
             this.context.Gods.Add(newGod);

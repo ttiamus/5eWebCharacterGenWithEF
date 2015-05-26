@@ -18,10 +18,10 @@ namespace CharacterGen5th.Models.ViewModels
 
         public string PlayerName { get; set; }
         public string CharacterName { get; set; }
-        public int Age { get; set; }
+        public int? Age { get; set; }
         public bool Male { get; set; }
-        public int Height { get; set; }
-        public int Weight { get; set; }
+        public int? Height { get; set; }
+        public int? Weight { get; set; }
         public string Eyes { get; set; }
         public string Hair { get; set; }
         public string Skin { get; set; }
@@ -36,10 +36,10 @@ namespace CharacterGen5th.Models.ViewModels
             Str = Dex = Con = Int = Wis = Cha = 10; // Set all inital stats to 10
             PlayerName = "";
             CharacterName = "";
-            Age = 0;
+            Age = null;
             Male = true;
-            Height = 0;
-            Weight = 0;
+            Height = null;
+            Weight = null;
             Eyes = "";
             Hair = "";
             Skin = "";
