@@ -1,4 +1,4 @@
-USE [CharGen5thCodeFirst]
+USE [CharacterGen]
 GO
 IF EXISTS (Select * from sys.procedures WHERE name = 'InsertSpells')
 	Drop procedure InsertSpells

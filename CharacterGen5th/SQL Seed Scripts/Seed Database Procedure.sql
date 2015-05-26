@@ -1,4 +1,4 @@
-use CharGen5thCodeFirst;
+use CharacterGen;
 
 IF EXISTS (Select * from sys.procedures WHERE name = 'SeedDatabase')
 	Drop procedure SeedDatabase

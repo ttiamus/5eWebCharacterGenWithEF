@@ -279,6 +279,14 @@
     <Compile Include="Migrations\201505170027113_AddedSpellLevelToClassSpellMap.Designer.cs">
       <DependentUpon>201505170027113_AddedSpellLevelToClassSpellMap.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505261542126_dunnoWhatChanged.cs" />
+    <Compile Include="Migrations\201505261542126_dunnoWhatChanged.Designer.cs">
+      <DependentUpon>201505261542126_dunnoWhatChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505261611214_removePrimaryTraitFromRaceProperty.cs" />
+    <Compile Include="Migrations\201505261611214_removePrimaryTraitFromRaceProperty.Designer.cs">
+      <DependentUpon>201505261611214_removePrimaryTraitFromRaceProperty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AbilityScore.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -540,6 +548,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505170027113_AddedSpellLevelToClassSpellMap.resx">
       <DependentUpon>201505170027113_AddedSpellLevelToClassSpellMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505261542126_dunnoWhatChanged.resx">
+      <DependentUpon>201505261542126_dunnoWhatChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505261611214_removePrimaryTraitFromRaceProperty.resx">
+      <DependentUpon>201505261611214_removePrimaryTraitFromRaceProperty.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
