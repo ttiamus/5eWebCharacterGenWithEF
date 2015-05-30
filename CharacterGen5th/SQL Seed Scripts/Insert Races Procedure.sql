@@ -9,7 +9,7 @@ as
 Begin
 	Delete From Races Where Race_Id > -1;
 	DBCC CHECKIDENT (Races, RESEED, 0);
-  --insert into Races values (Race, SizeId, Speed);
+  --insert into Races values (Race, SizeId, Speed, SubraceOfRaceId);
 
 	insert into Races values ('Dwarf', 2, 25);
 	insert into Races values ('Elf', 2, 30);
@@ -31,7 +31,7 @@ Begin
 	insert into Races values ('Dragonborn, Brass', 2, 30);
 	insert into Races values ('Dragonborn, Bronze', 2, 30);
 	insert into Races values ('Dragonborn, Copper', 2, 30);
-	insert into Races values ('Dragonborn, Gold', 2, 30 );
+	insert into Races values ('Dragonborn, Gold', 2, 30);
 	insert into Races values ('Dragonborn, Green', 2, 30);
 	insert into Races values ('Dragonborn, Red', 2, 30);
 	insert into Races values ('Dragonborn, Silver', 2, 30);
