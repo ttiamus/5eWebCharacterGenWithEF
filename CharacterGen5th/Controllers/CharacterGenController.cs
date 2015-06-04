@@ -74,7 +74,7 @@ namespace CharacterGen5th.Controllers
         // GET: /CharacterGen/Class
         public ActionResult Class()
         {
-            return View("Class", ClassRepo.GetClasses());
+            return View("Class");
         }
 
         // GET: /CharacterGen/ClassOptions
@@ -92,6 +92,11 @@ namespace CharacterGen5th.Controllers
             demoViewModel.Alignments = AlignmentRepo.GetAlignments();
 
             return Json(demoViewModel, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult ClassInit()
+        {
+            return Json(ClassRepo.GetClasses(), JsonRequestBehavior.AllowGet);
         }
 
         // GET: /CharacterGen/DemographicInit

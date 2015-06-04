@@ -98,11 +98,6 @@ demographic.controller('demographicController', function ($scope, $http)
         {
             console.log( data );
         });
-        //    .get( "/CharacterGen/CharacterGen/GetGodsByAlignment")
-        //.success( function ( data )
-       //{
-       //    console.log( data );
-       // });
     }
 
     $scope.UpdateStat = function (stat)
@@ -172,7 +167,6 @@ demographic.controller('demographicController', function ($scope, $http)
         $http.get("/CharacterGen/CharacterGen/DemographicInit")
         .success(function (data)
         {
-            console.log(data);
             $scope.str = 
             {
                 score: data.Str,

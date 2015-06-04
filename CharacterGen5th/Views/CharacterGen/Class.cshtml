@@ -3,34 +3,27 @@
 @{
     ViewBag.Title = "Class";
 }
+<script src="~/Scripts/Controllers/ClassController.js"></script>
+<body ng-app="class">
+    <div ng-controller="classController">
+        <table>
 
-<table>
+            <tr>
+                <th>Level</th>
+                <th>Class</th>
+                <th>Hit Die</th>
+                <th>Hit Points</th>
+            </tr>
 
-    <tr>
-        <th>Level</th>
-        <th>Class</th>
-        <th>Hit Die</th>
-        <th>Hit Points</th>
-    </tr>
-
-    @for (var i = 1; i <= 20; i++)
-    {
-        <tr>
-            <td>@i</td>
-            
-            <td>
-                <select class="ClassSelector">
-                    <option>Choose A Class</option>
-                    @foreach (var className in Model)
-                    {
-                        <option value="@className.Class_Id">@className.Name</option>
-                    }
-
-                </select>
-            </td>
-
-            <td>d10</td>
-            <td>@Html.TextBox("hitPointsForLevel" + @i)</td>
-        </tr>
-    }
-</table>
+            <tr ng-repeat="i in classSelection track by $index">
+                <td>{{i.id}}</td>
+                <td>
+                    <select ng-model="i.class" ng-options="class.Name for class in classes"></select>
+                </td>
+                <td>{{class.HitDie}}</td>
+                <td><input type="text" ng-model="line.hitPoints" /></td>
+            </tr>
+        </table>}}
+        {{hitPointTotal}}
+    </div>
+</body>
