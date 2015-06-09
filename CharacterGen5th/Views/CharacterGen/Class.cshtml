@@ -1,9 +1,4 @@
-﻿@model IEnumerable<CharacterGen5th.Models.Class>
-
-@{
-    ViewBag.Title = "Class";
-}
-<script src="~/Scripts/Controllers/ClassController.js"></script>
+﻿<script src="~/Scripts/Controllers/ClassController.js"></script>
 <body ng-app="class">
     <div ng-controller="classController">
         <table>
@@ -15,15 +10,15 @@
                 <th>Hit Points</th>
             </tr>
 
-            <tr ng-repeat="i in classSelection track by $index">
-                <td>{{i.id}}</td>
+            <tr ng-repeat="level in classLevels track by $index">
+                <td>{{level.id}}</td>
                 <td>
-                    <select ng-model="i.class" ng-options="class.Name for class in classes"></select>
+                    <select ng-model="level.classSelected" ng-options="class.Name for class in classes"></select>
                 </td>
-                <td>{{class.HitDie}}</td>
-                <td><input type="text" ng-model="line.hitPoints" /></td>
+                <td>{{level.classSelected.HitDie}}</td>
+                <td><input type="text" ng-model="level.hitPoints" ng-change="evalHitPoints()"/></td>
             </tr>
-        </table>}}
-        {{hitPointTotal}}
+        </table>
+        <label>Total Hit Points: {{hitPointTotal}}</label>
     </div>
 </body>
