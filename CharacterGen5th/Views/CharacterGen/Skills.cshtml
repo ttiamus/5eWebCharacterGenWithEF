@@ -1,25 +1,23 @@
-﻿@model IEnumerable<CharacterGen5th.Models.Skill>
+﻿<script src="~/Scripts/Controllers/SkillController.js"></script>
+<html>
+<body ng-app="skill">
+    <div ng-controller="skillController">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Ability Mod</th>
+                <th>Rank</th>
+                <th>Misc</th>
+            </tr>
 
-@{
-    ViewBag.Title = "Skills";
-}
+            <tr ng-init="skills = init()" ng-repeat="skill in skills track by $index">
+                <td>{{skill.SkillName}}</td>
+                <td>0</td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+            </tr>
 
-
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Ability Mod</th>
-        <th>Rank</th>
-        <th>Misc</th>
-    </tr>
-
-    @foreach (var skill in Model)
-    {
-        <tr>
-            <td>@skill.SkillName</td>
-            <td>0</td>
-            <td><input type="text" /></td>
-            <td><input type="text" /></td>
-        </tr>
-    }
-</table>
+        </table>
+    </div>
+</body>
+</html>

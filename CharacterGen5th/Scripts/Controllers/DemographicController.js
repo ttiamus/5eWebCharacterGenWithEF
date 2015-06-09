@@ -1,6 +1,6 @@
-﻿var demographic = angular.module('demographic', []);
+﻿var demographic = angular.module("demographic", []);
 
-demographic.controller('demographicController', function ($scope, $http)
+demographic.controller("demographicController", function ($scope, $http)
 {
     $scope.str =
     {
@@ -100,6 +100,17 @@ demographic.controller('demographicController', function ($scope, $http)
         });
     }
 
+    function updatePointBuyTotal() {
+        $scope.pointBuyTotal = $scope.str.points +
+                               $scope.dex.points +
+                               $scope.con.points +
+                               $scope.int.points +
+                               $scope.wis.points +
+                               $scope.cha.points;
+
+        $scope.pointsRemaining = $scope.pointBuyTotal + maxPoints;
+    }
+
     $scope.UpdateStat = function (stat)
     {
         stat.bonus = Math.floor(stat.score / 2 - 5);
@@ -118,22 +129,10 @@ demographic.controller('demographicController', function ($scope, $http)
             stat.points = stat.score - 6;
         }
 
-        UpdatePointBuyTotal();
+        updatePointBuyTotal();
     }
 
-    function UpdatePointBuyTotal()
-    {
-        $scope.pointBuyTotal = $scope.str.points +
-                               $scope.dex.points +
-                               $scope.con.points +
-                               $scope.int.points +
-                               $scope.wis.points +
-                               $scope.cha.points;
-
-        $scope.pointsRemaining = $scope.pointBuyTotal + maxPoints;
-    }
-
-    function ValidateInput(event)
+    function validateInput(event)
     {
         var keyCode = event.keyCode;
         if (keyCode === 13)
@@ -162,7 +161,7 @@ demographic.controller('demographicController', function ($scope, $http)
         }
     }
 
-    Init = function Init()
+    var init = function()
     {
         $http.get("/CharacterGen/CharacterGen/DemographicInit")
         .success(function (data)
@@ -255,5 +254,5 @@ demographic.controller('demographicController', function ($scope, $http)
         });
     }
 
-    Init();
+    init();
 });

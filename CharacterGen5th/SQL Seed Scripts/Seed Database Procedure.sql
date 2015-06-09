@@ -23,4 +23,5 @@ BEGIN
 	exec InsertGods
 	exec InsertDomains
 	exec InsertBackgrounds
+	exec InsertSkills
 END;

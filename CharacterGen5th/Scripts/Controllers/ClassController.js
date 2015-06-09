@@ -14,13 +14,14 @@ Class.controller('classController', function ($scope, $http)
     
     var init = function() {
         $http.get("/CharacterGen/CharacterGen/ClassInit")
-            .success(function (data) {
+            .success(function (data)
+            {
 
                 $scope.classes = [];
-                $scope.classes.push(
-                {
+                $scope.classes.push
+                ({
                     Name: "Choose a Class"
-                })
+                });
 
                 for (var i = 0; i < data.length; i++)
                 {

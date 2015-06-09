@@ -1,140 +1,138 @@
-﻿@model CharacterGen5th.Models.ViewModels.ItemsViewModel
+﻿<body ng-app="item">
+    <div ng-controller="itemController">
+        <span>
+                <label>Total Wealth</label><label>0000</label>
+            </span>
 
-@{
-    ViewBag.Title = "Items";
-}
+        <table>
 
-<span>
-    <label>Total Wealth</label><label>0000</label>
-</span>
+            <tr>
+                <th></th>
+                <th>Quantity</th>
+                <th>Item</th>
+                <th>Weight</th>
+                <th>Cost</th>
+            </tr>
 
-<table>
+            @for (var i = 1; i <= 20; i++)
+            {
+                <tr>
+                    <td>@i</td>
+                    <td><input type="text"/></td>
+                    <td>
+                        <select class="ItemSelector">
+                            <option>Select An Item</option>
+                            @foreach (var item in Model.ItemsGeneral)
+                            {
+                                <option value="@item.Item_Id">@Html.DisplayFor(model => item.Name)</option>
+                            }
+                        </select>
+                    </td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+            }
+        </table>
 
-    <tr>
-        <th></th>
-        <th>Quantity</th>
-        <th>Item</th>
-        <th>Weight</th>
-        <th>Cost</th>
-    </tr>
+        <table>
 
-    @for (var i = 1; i <= 20; i++)
-    {
-        <tr>
-            <td>@i</td>
-            <td><input type="text" /></td>
-            <td>
-                <select class="ItemSelector">
-                    <option>Select An Item</option>
-                    @foreach (var item in Model.ItemsGeneral)
-                    {
-                        <option value="@item.Item_Id">@Html.DisplayFor(model => item.Name)</option>
-                    }
-                </select>
-            </td>
-            <td>0</td>
-            <td>0</td>
-        </tr>
-    }
-</table>
+            <tr>
+                <th></th>
+                <th>Quantity</th>
+                <th>Ammunition</th>
+                <th>Weight</th>
+                <th>Cost</th>
+            </tr>
 
-<table>
+            @for (var i = 1; i <= 4; i++)
+            {
+                <tr>
+                    <td>@i</td>
+                    <td><input type="text"/></td>
+                    <td>
+                        <select class="AmmunitionSelector">
+                            <option>Select An Item</option>
+                            @foreach (var item in Model.ItemsAmunition)
+                            {
+                                <option value="@item.Item_Id">@Html.DisplayFor(model => item.Name)</option>
+                            }
+                        </select>
+                    </td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+            }
+        </table>
 
-    <tr>
-        <th></th>
-        <th>Quantity</th>
-        <th>Ammunition</th>
-        <th>Weight</th>
-        <th>Cost</th>
-    </tr>
+        <table>
 
-    @for (var i = 1; i <= 4; i++)
-    {
-        <tr>
-            <td>@i</td>
-            <td><input type="text" /></td>
-            <td>
-                <select class="AmmunitionSelector">
-                    <option>Select An Item</option>
-                    @foreach (var item in Model.ItemsAmunition)
-                    {
-                        <option value="@item.Item_Id">@Html.DisplayFor(model => item.Name)</option>
-                    }
-                </select>
-            </td>
-            <td>0</td>
-            <td>0</td>
-        </tr>
-    }
-</table>
- 
-<table>
+            <tr>
+                <th></th>
+                <th>Weapon</th>
+                <th>Damage</th>
+                <th>Damage Type</th>
+                <th>Weight</th>
+                <th>Cost</th>
+            </tr>
 
-    <tr>
-        <th></th>
-        <th>Weapon</th>
-        <th>Damage</th>
-        <th>Damage Type</th>
-        <th>Weight</th>
-        <th>Cost</th>
-    </tr>
+            @for (var i = 1; i <= 5; i++)
+            {
+                <tr>
+                    <td>@i</td>
+                    <td>
+                        <select class="WeaponSelector">
+                            <option>Select A Weapon</option>
+                            @foreach (var weapon in Model.Weapons)
+                            {
+                                <option value="@weapon.Weapon_Id">@Html.DisplayFor(model => weapon.Name)</option>
+                            }
+                        </select>
+                    </td>
 
-    @for (var i = 1; i <= 5; i++)
-    {
-        <tr>
-            <td>@i</td>
-            <td>
-                <select class="WeaponSelector">
-                    <option>Select A Weapon</option>
-                    @foreach (var weapon in Model.Weapons)
-                    {
-                        <option value="@weapon.Weapon_Id">@Html.DisplayFor(model => weapon.Name)</option>
-                    }
-                </select>
-            </td>
+                    <td>1d6</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+            }
+        </table>
 
-            <td>1d6</td>
-            <td>0</td>
-            <td>0</td>
-        </tr>
-    }
-</table>
+        <table>
 
-<table>
+            <tr>
+                <th></th>
+                <th>Armor</th>
+                <th>AC Bonus</th>
+                <th>Armor Type</th>
+                <th>Max Dex Bonus</th>
+                <th>Requires Str</th>
+                <th>Stealth Disadvantage</th>
+                <th>Weight</th>
+                <th>Cost</th>
+            </tr>
 
-    <tr>
-        <th></th>
-        <th>Armor</th>
-        <th>AC Bonus</th>
-        <th>Armor Type</th>
-        <th>Max Dex Bonus</th>
-        <th>Requires Str</th>
-        <th>Stealth Disadvantage</th>
-        <th>Weight</th>
-        <th>Cost</th>
-    </tr>
+            @for (var i = 1; i <= 5; i++)
+            {
+                <tr>
+                    <td>@i</td>
+                    <td>
+                        <select class="ArmorSelector">
+                            <option>Select An Armor</option>
+                            @foreach (var armor in Model.Armors)
+                            {
+                                <option value="@armor.Armor_Id">@Html.DisplayFor(model => armor.Name)</option>
+                            }
+                        </select>
+                    </td>
 
-    @for (var i = 1; i <= 5; i++)
-    {
-        <tr>
-            <td>@i</td>
-            <td>
-                <select class="ArmorSelector">
-                    <option>Select An Armor</option>
-                    @foreach (var armor in Model.Armors)
-                    {
-                        <option value="@armor.Armor_Id">@Html.DisplayFor(model => armor.Name)</option>
-                    }
-                </select>
-            </td>
-
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-        </tr>
-    }
-</table>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>

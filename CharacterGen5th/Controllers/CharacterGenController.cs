@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
-using CharacterGen5th.Models;
-using CharacterGen5th.Repositories;
 using CharacterGen5th.Bootstraper.Models;
 using CharacterGen5th.Models.ViewModels;
 
@@ -56,19 +51,13 @@ namespace CharacterGen5th.Controllers
         // GET: /CharacterGen/Items
         public ActionResult Items()
         {
-            ItemsViewModel itemVM = new ItemsViewModel();
-            itemVM.Armors = ArmorRepo.GetArmors().OrderBy(x => x.Name);
-            itemVM.ItemsAmunition = ItemRepo.GetItems().Where(x => x.ItemType == "Ammunition").OrderBy(x => x.Name);
-            itemVM.ItemsGeneral = ItemRepo.GetItems().Where(x => x.ItemType != "Ammunition").OrderBy(x => x.Name);
-            itemVM.Weapons = WeaponRepo.GetWeapons().OrderBy(x => x.Name);
-
-            return View("Items", itemVM);
+            return View("Items");
         }
 
         // GET: /CharacterGen/Skills
         public ActionResult Skills()
         {
-            return View("Skills", SkillRepo.GetSkills());
+            return View("Skills");
         }
 
         // GET: /CharacterGen/Class
@@ -94,9 +83,29 @@ namespace CharacterGen5th.Controllers
             return Json(demoViewModel, JsonRequestBehavior.AllowGet);
         }
 
+        // GET: /CharacterGen/ClassInit
         public ActionResult ClassInit()
         {
             return Json(ClassRepo.GetClasses(), JsonRequestBehavior.AllowGet);
+        }
+
+        // GET: /CharacterGen/SkillInit
+        public ActionResult SkillInit()
+        {
+            var test  = SkillRepo.GetSkills();
+            return Json(SkillRepo.GetSkills(), JsonRequestBehavior.AllowGet);
+        }
+
+        // GET: /CharacterGen/ItemInit
+        public ActionResult ItemInit()
+        {
+            ItemsViewModel itemViewModel = new ItemsViewModel();
+            itemViewModel.Armors = ArmorRepo.GetArmors().OrderBy(x => x.Name);
+            itemViewModel.ItemsAmunition = ItemRepo.GetItems().Where(x => x.ItemType == "Ammunition").OrderBy(x => x.Name);
+            itemViewModel.ItemsGeneral = ItemRepo.GetItems().Where(x => x.ItemType != "Ammunition").OrderBy(x => x.Name);
+            itemViewModel.Weapons = WeaponRepo.GetWeapons().OrderBy(x => x.Name);
+
+            return Json(itemViewModel, JsonRequestBehavior.AllowGet);
         }
 
         // GET: /CharacterGen/DemographicInit
