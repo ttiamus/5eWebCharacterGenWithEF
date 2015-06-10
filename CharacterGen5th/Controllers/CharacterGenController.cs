@@ -86,7 +86,9 @@ namespace CharacterGen5th.Controllers
         // GET: /CharacterGen/ClassInit
         public ActionResult ClassInit()
         {
-            return Json(ClassRepo.GetClasses(), JsonRequestBehavior.AllowGet);
+            var classViewModel = new ClassViewModel();
+            classViewModel.Classes = ClassRepo.GetClasses();
+            return Json(classViewModel, JsonRequestBehavior.AllowGet);
         }
 
         // GET: /CharacterGen/SkillInit
@@ -109,7 +111,7 @@ namespace CharacterGen5th.Controllers
         {
             ItemsViewModel itemViewModel = new ItemsViewModel();
             itemViewModel.Armors = ArmorRepo.GetArmors().OrderBy(x => x.Name);
-            itemViewModel.ItemsAmunition = ItemRepo.GetItems().Where(x => x.ItemType == "Ammunition").OrderBy(x => x.Name);
+            itemViewModel.ItemsAmmunition = ItemRepo.GetItems().Where(x => x.ItemType == "Ammunition").OrderBy(x => x.Name);
             itemViewModel.ItemsGeneral = ItemRepo.GetItems().Where(x => x.ItemType != "Ammunition").OrderBy(x => x.Name);
             itemViewModel.Weapons = WeaponRepo.GetWeapons().OrderBy(x => x.Name);
 

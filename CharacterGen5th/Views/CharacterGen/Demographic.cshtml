@@ -2,7 +2,7 @@
 <html>
 <body ng-app="demographic">
     <div ng-controller="demographicController">
-        <div id="scores">
+        <div class="col-md-3" id="scores">
             <table id="scoreTable" style="width:100%">
                 <tr>
                     <td class="width5Percent"></td>
@@ -74,7 +74,7 @@
             </table>
         </div>
 
-        <div id="demographic">
+        <div class="col-md-5" id="demographic">
             <label>Player Name</label><input type="text" ng-model="playerName">
             <label>Character Name</label><input type="text" ng-model="characterName">
             <label>Age</label><input type="text" ng-model="age">
@@ -91,25 +91,23 @@
             <label>Wealth</label><input type="text" ng-model="wealth">
         </div>
 
-        <div id="race">
+        <div class="col-md-2" id="race">
             <span>
                 <label>Race</label>
                 <select ng-model="race" ng-options="race.RaceName for race in races"></select>
             </span>
         </div>
 
-        <div>
-            <div id="alignment">
-                <span>
-                    <label>Alignment</label>
-                    <select ng-model="alignment" ng-change="UpdateAvailableGods(alignment.Alignment_Id)" ng-options="alignment.Alignment_Name for alignment in alignments"></select>
-                </span>
-
-                <span>
-                    <label>Diety</label>
-                    <select ng-model="god" ng-options="god.Name for god in gods"></select>
-                </span>
-            </div>
+        <div class="col-md-2" id="alignment">
+            <span>
+                <label>Alignment</label>
+                <select ng-model="alignment" ng-change="UpdateAvailableGods(alignment.Alignment_Id)" ng-options="alignment.Alignment_Name for alignment in alignments"></select>
+            </span>
+            <br/>
+            <span>
+                <label>Diety</label>
+                <select ng-model="god" ng-options="god.Name for god in gods"></select>
+            </span>
         </div>
 
         <div class="float-right">

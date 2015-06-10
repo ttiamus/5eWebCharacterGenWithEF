@@ -16,18 +16,12 @@ Class.controller('classController', function ($scope, $http)
         $http.get("/CharacterGen/CharacterGen/ClassInit")
             .success(function (data)
             {
-
-                $scope.classes = [];
-                $scope.classes.push
+                console.log(data);
+                $scope.classes = data.Classes;
+                $scope.classes.unshift
                 ({
                     Name: "Choose a Class"
                 });
-
-                for (var i = 0; i < data.length; i++)
-                {
-                    $scope.classes.push(data[i]);
-                }
-                $scope.class = $scope.classes[0];
 
                 $scope.classLevels =
                     [

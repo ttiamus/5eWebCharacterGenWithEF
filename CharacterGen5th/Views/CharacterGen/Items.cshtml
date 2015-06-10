@@ -1,8 +1,9 @@
-﻿<body ng-app="item">
+﻿<script src="~/Scripts/Controllers/ItemController.js"></script>
+<body ng-app="item">
     <div ng-controller="itemController">
         <span>
                 <label>Total Wealth</label><label>0000</label>
-            </span>
+        </span>
 
         <table>
 
@@ -14,28 +15,20 @@
                 <th>Cost</th>
             </tr>
 
-            @for (var i = 1; i <= 20; i++)
-            {
-                <tr>
-                    <td>@i</td>
-                    <td><input type="text"/></td>
-                    <td>
-                        <select class="ItemSelector">
-                            <option>Select An Item</option>
-                            @foreach (var item in Model.ItemsGeneral)
-                            {
-                                <option value="@item.Item_Id">@Html.DisplayFor(model => item.Name)</option>
-                            }
-                        </select>
-                    </td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-            }
+            
+            <tr ng-repeat="selectedItem in selectedItems track by $index">
+                <td>{{selectedItem.id}}</td>
+                <td><input type="text" ng-model="selectedItem.quantity" /></td>
+                <td>
+                    <select ng-model="selectedItem.item" ng-options="item.Name for item in items"></select>
+                </td>
+                <td>{{selectedItem.item.Weight}}</td>
+                <td>{{selectedItem.item.Cost}}</td>
+            </tr>
+            
         </table>
 
         <table>
-
             <tr>
                 <th></th>
                 <th>Quantity</th>
@@ -44,24 +37,15 @@
                 <th>Cost</th>
             </tr>
 
-            @for (var i = 1; i <= 4; i++)
-            {
-                <tr>
-                    <td>@i</td>
-                    <td><input type="text"/></td>
-                    <td>
-                        <select class="AmmunitionSelector">
-                            <option>Select An Item</option>
-                            @foreach (var item in Model.ItemsAmunition)
-                            {
-                                <option value="@item.Item_Id">@Html.DisplayFor(model => item.Name)</option>
-                            }
-                        </select>
-                    </td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-            }
+            <tr ng-repeat="selectedAmmunition in selectedAmmunitions track by $index">
+                <td>{{selectedAmmunition.id}}</td>
+                <td><input type="text" ng-model="selectedAmmunition.quantity" /></td>
+                <td>
+                    <select ng-model="selectedAmmunition.ammunition" ng-options="ammunition.Name for ammunition in ammunitions"></select>
+                </td>
+                <td>{{selectedAmmunition.ammunition.Weight}}</td>
+                <td>{{selectedAmmunition.ammunition.Cost}}</td>
+            </tr>
         </table>
 
         <table>
@@ -75,25 +59,18 @@
                 <th>Cost</th>
             </tr>
 
-            @for (var i = 1; i <= 5; i++)
-            {
-                <tr>
-                    <td>@i</td>
+                <tr ng-repeat="selectedWeapon in selectedWeapons track by $index">
+                    <td>{{selectedWeapon.id}}</td>
                     <td>
-                        <select class="WeaponSelector">
-                            <option>Select A Weapon</option>
-                            @foreach (var weapon in Model.Weapons)
-                            {
-                                <option value="@weapon.Weapon_Id">@Html.DisplayFor(model => weapon.Name)</option>
-                            }
-                        </select>
+                        <select ng-model="selectedWeapon.weapon" ng-options="weapon.Name for weapon in weapons"></select>
                     </td>
 
-                    <td>1d6</td>
-                    <td>0</td>
-                    <td>0</td>
+                    <td>{{selectedWeapon.weapon.Damage}}</td>
+                    <td>{{selectedWeapon.weapon.DamageType}}</td>
+                    <td>{{selectedWeapon.weapon.Weight}}</td>
+                    <td>{{selectedWeapon.weapon.Cost}}</td>
                 </tr>
-            }
+            
         </table>
 
         <table>
@@ -110,29 +87,21 @@
                 <th>Cost</th>
             </tr>
 
-            @for (var i = 1; i <= 5; i++)
-            {
-                <tr>
-                    <td>@i</td>
-                    <td>
-                        <select class="ArmorSelector">
-                            <option>Select An Armor</option>
-                            @foreach (var armor in Model.Armors)
-                            {
-                                <option value="@armor.Armor_Id">@Html.DisplayFor(model => armor.Name)</option>
-                            }
-                        </select>
-                    </td>
+            <tr ng-repeat="selectedArmor in selectedArmors track by $index">
+                <td>{{selectedArmor.id}}</td>
+                <td>
+                    <select ng-model="selectedArmor.armor" ng-options="armor.Name for armor in armors"></select>
+                </td>
 
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-            }
+                <td>{{selectedArmor.armor.BaseAc}}</td>
+                <td>{{selectedArmor.armor.ArmorType}}</td>
+                <td>{{selectedArmor.armor.MaxDexMod}}</td>
+                <td>{{selectedArmor.armor.RequiredStr}}</td>
+                <td>{{selectedArmor.armor.StealthDisadvantage}}</td>
+                <td>{{selectedArmor.armor.Weight}}</td>
+                <td>{{selectedArmor.armor.Cost}}</td>
+            </tr>
+            
         </table>
     </div>
 </body>

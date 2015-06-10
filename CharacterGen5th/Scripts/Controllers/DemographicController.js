@@ -165,46 +165,48 @@ demographic.controller("demographicController", function ($scope, $http)
     {
         $http.get("/CharacterGen/CharacterGen/DemographicInit")
         .success(function (data)
-        {
+            {
+                console.log(data);
+
             $scope.str = 
             {
                 score: data.Str,
-                racialMod: 0,
+                racialMod: 0
             }
             $scope.UpdateStat($scope.str);
 
             $scope.dex =
             {
                 score: data.Dex,
-                racialMod: 0,
+                racialMod: 0
             }
             $scope.UpdateStat($scope.dex);
 
             $scope.con =
             {
                 score: data.Con,
-                racialMod: 0,
+                racialMod: 0
             }
             $scope.UpdateStat($scope.con);
 
             $scope.int =
             {
                 score: data.Int,
-                racialMod: 0,
+                racialMod: 0
             }
             $scope.UpdateStat($scope.int);
 
             $scope.wis =
             {
                 score: data.Wis,
-                racialMod: 0,
+                racialMod: 0
             }
             $scope.UpdateStat($scope.wis);
 
             $scope.cha =
             {
                 score: data.Cha,
-                racialMod: 0,
+                racialMod: 0
             }
             $scope.UpdateStat($scope.cha);
 
@@ -227,30 +229,17 @@ demographic.controller("demographicController", function ($scope, $http)
                 $scope.gender = $scope.genders[1];
             }
 
-            $scope.races = [];
-            for ( var i = 0; i < data.Races.length; i++ )
-            {
-                $scope.races.push( data.Races[i] );
-            }
+            $scope.races = data.Races;
+            $scope.races.unshift({ RaceName: "Choose A Race" });
             $scope.race = $scope.races[0];
 
-            $scope.alignments = [];
-            for ( var i = 0; i < data.Alignments.length; i++ )
-            {
-                $scope.alignments.push( data.Alignments[i] );
-            }
+            $scope.alignments = data.Alignments;
+            $scope.alignments.unshift({ Alignment_Name: "Choose An Alignment" });
             $scope.alignment = $scope.alignments[0];
 
-            $scope.gods = [];
-            for ( var i = 0; i < data.Gods.length; i++ )
-            {
-                $scope.gods.push( data.Gods[i] );
-            }
+            $scope.gods = data.Gods;
+            $scope.gods.unshift({ Name: "Choose A Diety" });
             $scope.god = $scope.gods[0];
-
-            //$scope.alignments = data.Alignments[1];
-            //$scope.gods = data.Gods;
-
         });
     }
 

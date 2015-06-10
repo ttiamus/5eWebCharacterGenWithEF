@@ -7,7 +7,6 @@ skill.controller("skillController", function ($scope, $http) {
         $http.get("/CharacterGen/CharacterGen/SkillInit")
             .success(function(data)
             {
-                console.log(data);
                 $scope.skills = data.Skills;
                 $scope.Str = data.Str;
                 $scope.Dex = data.Dex;

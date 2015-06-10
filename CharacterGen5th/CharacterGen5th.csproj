@@ -327,6 +327,7 @@
     <Compile Include="Models\Skill.cs" />
     <Compile Include="Models\Spell.cs" />
     <Compile Include="Models\Trait.cs" />
+    <Compile Include="Models\ViewModels\ClassViewModel.cs" />
     <Compile Include="Models\ViewModels\ItemsViewModel.cs" />
     <Compile Include="Models\ViewModels\SkillViewModel.cs" />
     <Compile Include="Models\Weapon.cs" />
@@ -378,7 +379,6 @@
     <Compile Include="Services\CharacterBuilderService.cs" />
     <Compile Include="Services\DataRetrievalService.cs" />
     <Compile Include="Models\ViewModels\DemographicViewModel.cs" />
-    <Compile Include="SkillDTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />

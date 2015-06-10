@@ -8,7 +8,7 @@ namespace CharacterGen5th.Models.ViewModels
     public class ItemsViewModel
     {
         public IEnumerable<Armor> Armors { get; set; }
-        public IEnumerable<Item> ItemsAmunition { get; set; }
+        public IEnumerable<Item> ItemsAmmunition { get; set; }
         public IEnumerable<Item> ItemsGeneral { get; set; }
         public IEnumerable<Weapon> Weapons { get; set; }
     }
