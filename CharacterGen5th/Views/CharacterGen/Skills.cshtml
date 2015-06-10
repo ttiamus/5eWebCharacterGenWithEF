@@ -8,13 +8,15 @@
                 <th>Ability Mod</th>
                 <th>Rank</th>
                 <th>Misc</th>
+                <th>Total</th>
             </tr>
 
-            <tr ng-init="skills = init()" ng-repeat="skill in skills track by $index">
+            <tr ng-repeat="skill in skills track by $index">
                 <td>{{skill.SkillName}}</td>
-                <td>0</td>
-                <td><input type="text" /></td>
-                <td><input type="text" /></td>
+                <td>{{skill.AbilityMod}}</td>
+                <td><input type="text" ng-model="skill.Rank" /></td>
+                <td><input type="text" ng-model="skill.MiscMod" /></td>
+                <td><label>{{skill.Rank + skill.MiscMod}}</label></td>
             </tr>
 
         </table>

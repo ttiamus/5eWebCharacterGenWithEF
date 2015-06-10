@@ -1,12 +1,6 @@
 ﻿var skill = angular.module("skill", []);
 
 skill.controller("skillController", function ($scope, $http) {
-
-    $scope.skills =
-    [
-        {SkillName: "Athletics"}
-    ];
-
     
     var init = function ()
     {
@@ -14,7 +8,13 @@ skill.controller("skillController", function ($scope, $http) {
             .success(function(data)
             {
                 console.log(data);
-                return data;
+                $scope.skills = data.Skills;
+                $scope.Str = data.Str;
+                $scope.Dex = data.Dex;
+                $scope.Con = data.Con;
+                $scope.Int = data.Int;
+                $scope.Wis = data.Wis;
+                $scope.Cha = data.Cha;
             });
     }
 

@@ -18,7 +18,7 @@ namespace CharacterGen5th.Repositories
         {
             return this.context.Skills.ToList();
         }
-
+        
         public void CreateSkill(Skill newSkill)
         {
             this.context.Skills.Add(newSkill);

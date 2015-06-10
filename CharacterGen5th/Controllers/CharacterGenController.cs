@@ -92,8 +92,16 @@ namespace CharacterGen5th.Controllers
         // GET: /CharacterGen/SkillInit
         public ActionResult SkillInit()
         {
-            var test  = SkillRepo.GetSkills();
-            return Json(SkillRepo.GetSkills(), JsonRequestBehavior.AllowGet);
+            var skillViewModel = new SkillViewModel();
+            skillViewModel.Skills = SkillRepo.GetSkills();
+            skillViewModel.Str = 0;
+            skillViewModel.Dex = 0;
+            skillViewModel.Con = 0;
+            skillViewModel.Int = 0;
+            skillViewModel.Wis = 0;
+            skillViewModel.Cha = 0;
+
+            return Json(skillViewModel, JsonRequestBehavior.AllowGet);
         }
 
         // GET: /CharacterGen/ItemInit
