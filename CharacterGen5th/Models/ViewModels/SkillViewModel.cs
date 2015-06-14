@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,19 +10,25 @@ namespace CharacterGen5th.Models.ViewModels
 {
     public class SkillViewModel
     {
-        public IEnumerable<Skill> Skills { get; set; }
+        public IEnumerable<SkillDto> Skills { get; set; }
+    }
 
-        public int Str { get; set; }
+    public class SkillDto
+    {
+        public SkillDto() { }
 
-        public int Dex { get; set; }
+        [Key]
+        public int Skill_Id { get; set; }
 
-        public int Con { get; set; }
+        [Required]
+        public string SkillName { get; set; }
+        
+        public string AbilityName { get; set; }
 
-        public int Int { get; set; }
+        public int AbilityScore { get; set; }
 
-        public int Wis { get; set; }
+        public int Rank { get; set; }
 
-        public int Cha { get; set; }
-
+        public int MiscMod { get; set; }
     }
 }

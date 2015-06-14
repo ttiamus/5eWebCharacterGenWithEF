@@ -8,12 +8,12 @@ using System.Web;
 
 namespace CharacterGen5th.Repositories
 {
-    public class CharacterRepository : AbstractRepository//, ICharacterRepository
+    public class CharacterRepository : AbstractRepository, ICharacterRepository
     {
         public CharacterRepository(CharGenContext context) : base(context)
         {
         }
-        /*
+        
         public IEnumerable<Character> GetCharacters()
         {
             return this.context.Characters.ToList();
@@ -41,6 +41,6 @@ namespace CharacterGen5th.Repositories
             var toDelete = this.context.Characters.Find(id);
             this.context.Characters.Remove(toDelete);
             this.context.SaveChanges();
-        }*/
+        }
     }
 }

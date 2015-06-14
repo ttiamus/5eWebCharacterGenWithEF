@@ -18,11 +18,9 @@ namespace CharacterGen5th.Models
 
         public string Name { get; set; }
 
-        //public string Description { get; set; }
-
         public int HitDie { get; set; }
-        
-        //Add property to choose class skills
+       
+        //Class Skiills
 
         public virtual IEnumerable<ClassToWeaponMap> WeaponProf { get; set; }
 

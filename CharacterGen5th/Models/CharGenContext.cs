@@ -17,7 +17,7 @@ namespace CharacterGen5th.Models
         public DbSet<Alignment> Alignments { get; set; }
         public DbSet<Armor> Armors { get; set; }
         public DbSet<Background> Backgrounds { get; set; }
-        //public DbSet<Character> Characters { get; set; }
+        public DbSet<Character> Characters { get; set; }
         public DbSet<Class> Classes { get; set; }
         public DbSet<Domain> Domains { get; set; }
         public DbSet<Feat> Feats { get; set; }

@@ -22,7 +22,7 @@ namespace CharacterGen5th.Models
         [Required]
         [ForeignKey("AbilityScore_Id")]
         public AbilityScore AbilityScore { get; set; }
-        public int? AbilityScore_Id { get; set; }
+        public int AbilityScore_Id { get; set; }
 
         public virtual IEnumerable<BackgroundToSkillMap> BackgroundThatGiveSkill { get; set; }
     }

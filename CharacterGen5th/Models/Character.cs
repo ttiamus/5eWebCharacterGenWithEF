@@ -11,23 +11,29 @@ namespace CharacterGen5th.Models
     [Table("Characters")]
     public class Character
     {
-       /* public Character() { }
+        public Character() { }
 
         [Key]
         public int Character_Id { get; set; }
 
-        public List<int> AbilityScores { get; set; }    //List of ints in order of Str Dex Con Int Wis Cha
-                                                        //May need to make an abillity score map with foreign keys Character_Id AbilityScore_Id and int value
+        public int Str { get; set; }
+
+        public int Dex { get; set; }
+
+        public int Con { get; set; }
+
+        public int Int { get; set; }
+
+        public int Wis { get; set; }
+
+        public int Cha { get; set; }
+
         [ForeignKey("Alignment_Id")]
         public Alignment AlignmentSelected { get; set; }
         public int? Alignment_Id { get; set; }
 
         public List<Armor> ArmorSelected { get; set; }      //Can calculate AC from this or make it's own value to store in database
-
-        [ForeignKey("Background_Id")]
-        public Background BackgroundSelected { get; set; }
-        public int? Background_Id { get; set; }
-
+        
         public IEnumerable<Class> ClassesSelected { get; set; }    //List of chosen classes. May need to make a mapping class with Class_Id and int LevelsTaken
 
         public IEnumerable<Feat> FeatsSelected { get; set; }
@@ -57,6 +63,6 @@ namespace CharacterGen5th.Models
 
         public int Age { get; set; }
 
-        public int Weight { get; set; }*/
+        public int Weight { get; set; }
     }
 }

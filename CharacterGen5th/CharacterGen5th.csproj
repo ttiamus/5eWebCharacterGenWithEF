@@ -294,6 +294,10 @@
     <Compile Include="Migrations\201505261611214_removePrimaryTraitFromRaceProperty.Designer.cs">
       <DependentUpon>201505261611214_removePrimaryTraitFromRaceProperty.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506141328367_readdedCharacterModel.cs" />
+    <Compile Include="Migrations\201506141328367_readdedCharacterModel.Designer.cs">
+      <DependentUpon>201506141328367_readdedCharacterModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AbilityScore.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -516,6 +520,7 @@
     <Content Include="Views\CharacterGen\Skills.cshtml" />
     <Content Include="Views\CharacterGen\Class.cshtml" />
     <Content Include="Views\CharacterGen\ClassOptions.cshtml" />
+    <Content Include="Views\CharacterGen\Feats.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -565,6 +570,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505261611214_removePrimaryTraitFromRaceProperty.resx">
       <DependentUpon>201505261611214_removePrimaryTraitFromRaceProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506141328367_readdedCharacterModel.resx">
+      <DependentUpon>201506141328367_readdedCharacterModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

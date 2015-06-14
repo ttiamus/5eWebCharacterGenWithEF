@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using CharacterGen5th.Bootstraper.Models;
 using CharacterGen5th.Models.ViewModels;
@@ -72,6 +73,11 @@ namespace CharacterGen5th.Controllers
             return View("ClassOptions");
         }
 
+        public ActionResult Feats()
+        {
+            return View("Feats");
+        }
+
         // GET: /CharacterGen/DemographicInit
         public ActionResult DemographicInit()
         {
@@ -94,14 +100,23 @@ namespace CharacterGen5th.Controllers
         // GET: /CharacterGen/SkillInit
         public ActionResult SkillInit()
         {
+            var scores = new Dictionary<string, int>();
+            scores.Add("Str", 0);
+            scores.Add("Dex", 1);
+            scores.Add("Con", 2);
+            scores.Add("Int", 3);
+            scores.Add("Wis", 4);
+            scores.Add("Cha", 5);
+
             var skillViewModel = new SkillViewModel();
-            skillViewModel.Skills = SkillRepo.GetSkills();
-            skillViewModel.Str = 0;
-            skillViewModel.Dex = 0;
-            skillViewModel.Con = 0;
-            skillViewModel.Int = 0;
-            skillViewModel.Wis = 0;
-            skillViewModel.Cha = 0;
+            var abilityScores = AbilityScoreRepo.GetAbilityScores().ToList();
+            skillViewModel.Skills = SkillRepo.GetSkills().Select(x => new SkillDto()
+            {
+                Skill_Id = x.Skill_Id,
+                SkillName = x.SkillName,
+                AbilityName = abilityScores[x.AbilityScore_Id - 1].Ability,
+                AbilityScore = scores[abilityScores[x.AbilityScore_Id - 1].Ability]
+            }).OrderBy(x => x.SkillName);
 
             return Json(skillViewModel, JsonRequestBehavior.AllowGet);
         }

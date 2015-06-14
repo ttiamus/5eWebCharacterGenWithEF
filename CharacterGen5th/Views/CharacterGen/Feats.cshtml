@@ -4,7 +4,6 @@
         <table>
             <tr>
                 <th>Name</th>
-                <th>Ability</th>
                 <th>Ability Mod</th>
                 <th>Rank</th>
                 <th>Misc</th>
@@ -13,12 +12,12 @@
 
             <tr ng-repeat="skill in skills track by $index">
                 <td>{{skill.SkillName}}</td>
-                <td>{{skill.AbilityName}}</td>
-                <td>{{skill.AbilityScore}}</td>
+                <td>{{skill.AbilityMod}}</td>
                 <td><input type="text" ng-model="skill.Rank" /></td>
                 <td><input type="text" ng-model="skill.MiscMod" /></td>
-                <td><label>{{getTotal(skill)}}</label></td>
+                <td><label>{{skill.Rank + skill.MiscMod}}</label></td>
             </tr>
+
         </table>
     </div>
 </body>
