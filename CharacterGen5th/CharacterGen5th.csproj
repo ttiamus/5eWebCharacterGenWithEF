@@ -521,6 +521,7 @@
     <Content Include="Views\CharacterGen\Class.cshtml" />
     <Content Include="Views\CharacterGen\ClassOptions.cshtml" />
     <Content Include="Views\CharacterGen\Feats.cshtml" />
+    <Content Include="Views\CharacterGen\Traits.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

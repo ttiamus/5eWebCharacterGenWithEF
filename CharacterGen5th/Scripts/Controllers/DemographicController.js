@@ -2,90 +2,13 @@
 
 demographic.controller("demographicController", function ($scope, $http)
 {
-    $scope.str =
-    {
-        score: 10,
-        bonus: 0,
-        racialMod: 0,
-        total: 0,
-        points: 2
-    }
-
-    $scope.dex =
-    {
-        score: 10,
-        bonus: 0,
-        racialMod: 0,
-        total: 0,
-        points: 2
-    }
-
-    $scope.con =
-    {
-        score: 10,
-        bonus: 0,
-        racialMod: 0,
-        total: 0,
-        points: 2
-    }
-
-    $scope.int =
-    {
-        score: 10,
-        bonus: 0,
-        racialMod: 0,
-        total: 0,
-        points: 2
-    }
-
-    $scope.wis =
-    {
-        score: 10,
-        bonus: 0,
-        racialMod: 0,
-        total: 0,
-        points: 2
-    }
-
-    $scope.cha =
-    {
-        score: 10,
-        bonus: 0,
-        racialMod: 0,
-        total: 0,
-        points: 2
-    }
-    
-    $scope.pointBuyTotal = $scope.str.points +
-                           $scope.dex.points +
-                           $scope.con.points +
-                           $scope.int.points +
-                           $scope.wis.points +
-                           $scope.cha.points;
-
     var maxPoints = "/27";
-    //$scope.pointsRemaining = $scope.pointBuyTotal + maxPoints;
 
     $scope.genders =
     [
         "Male",
         "female"
     ];
-    $scope.gender = $scope.genders[0];
-
-    $scope.alignments =
-    [
-        "Lawful Good",
-        "Lawful Neutral"
-    ];
-    $scope.alignment = $scope.alignments[0];
-
-    $scope.gods =
-    [
-        { id: 1, name: "Auril", title: "title1", alignment: "Lawful Good1", symbol: "symbol1", domains: "domain1"},
-        { id: 2, name: "Sarenrae", title: "title2", alignment: "Lawful Good2", symbol: "symbol2", domains: "domain2" }
-    ];
-    $scope.god = $scope.gods[0];
 
     $scope.UpdateAvailableGods = function (alignmentId)
     {
@@ -101,12 +24,12 @@ demographic.controller("demographicController", function ($scope, $http)
     }
 
     function updatePointBuyTotal() {
-        $scope.pointBuyTotal = $scope.str.points +
-                               $scope.dex.points +
-                               $scope.con.points +
-                               $scope.int.points +
-                               $scope.wis.points +
-                               $scope.cha.points;
+        $scope.pointBuyTotal = $scope.stats.str.points +
+                               $scope.stats.dex.points +
+                               $scope.stats.con.points +
+                               $scope.stats.int.points +
+                               $scope.stats.wis.points +
+                               $scope.stats.cha.points;
 
         $scope.pointsRemaining = $scope.pointBuyTotal + maxPoints;
     }
@@ -166,81 +89,82 @@ demographic.controller("demographicController", function ($scope, $http)
         $http.get("/CharacterGen/CharacterGen/DemographicInit")
         .success(function (data)
             {
-                console.log(data);
+                $scope.stats = [];
 
-            $scope.str = 
-            {
-                score: data.Str,
-                racialMod: 0
-            }
-            $scope.UpdateStat($scope.str);
+                $scope.stats.str = 
+                {
+                    score: data.Str,
+                    racialMod: 0
+                }
 
-            $scope.dex =
-            {
-                score: data.Dex,
-                racialMod: 0
-            }
-            $scope.UpdateStat($scope.dex);
+                $scope.stats.dex =
+                {
+                    score: data.Dex,
+                    racialMod: 0
+                }
 
-            $scope.con =
-            {
-                score: data.Con,
-                racialMod: 0
-            }
-            $scope.UpdateStat($scope.con);
+                $scope.stats.con =
+                {
+                    score: data.Con,
+                    racialMod: 0
+                }
 
-            $scope.int =
-            {
-                score: data.Int,
-                racialMod: 0
-            }
-            $scope.UpdateStat($scope.int);
+                $scope.stats.int =
+                {
+                    score: data.Int,
+                    racialMod: 0
+                }
 
-            $scope.wis =
-            {
-                score: data.Wis,
-                racialMod: 0
-            }
-            $scope.UpdateStat($scope.wis);
+                $scope.stats.wis =
+                {
+                    score: data.Wis,
+                    racialMod: 0
+                }
 
-            $scope.cha =
-            {
-                score: data.Cha,
-                racialMod: 0
-            }
-            $scope.UpdateStat($scope.cha);
+                $scope.stats.cha =
+                {
+                    score: data.Cha,
+                    racialMod: 0
+                }
 
-            $scope.playerName = data.PlayerName;
-            $scope.characterName = data.CharacterName;
-            $scope.age = data.Age;
-            $scope.height = data.Height;
-            $scope.weight = data.Weight;
-            $scope.eyes = data.Eyes;
-            $scope.hair = data.Hair;
-            $scope.skin = data.Skin;
-            $scope.wealth = data.Wealth;
+                $scope.UpdateStat($scope.stats.str);
+                $scope.UpdateStat($scope.stats.dex);
+                $scope.UpdateStat($scope.stats.con);
+                $scope.UpdateStat($scope.stats.int);
+                $scope.UpdateStat($scope.stats.wis);
+                $scope.UpdateStat($scope.stats.cha);
 
-            if(data.male === true)
-            {
-                $scope.gender = $scope.genders[0];
-            }
-            else
-            {
-                $scope.gender = $scope.genders[1];
-            }
+                $scope.playerName = data.PlayerName;
+                $scope.characterName = data.CharacterName;
+                $scope.age = data.Age;
+                $scope.height = data.Height;
+                $scope.weight = data.Weight;
+                $scope.eyes = data.Eyes;
+                $scope.hair = data.Hair;
+                $scope.skin = data.Skin;
+                $scope.wealth = data.Wealth;
 
-            $scope.races = data.Races;
-            $scope.races.unshift({ RaceName: "Choose A Race" });
-            $scope.race = $scope.races[0];
+                if(data.male === true)
+                {
+                    $scope.gender = $scope.genders[0];
+                }
+                else
+                {
+                    $scope.gender = $scope.genders[1];
+                }
 
-            $scope.alignments = data.Alignments;
-            $scope.alignments.unshift({ Alignment_Name: "Choose An Alignment" });
-            $scope.alignment = $scope.alignments[0];
+                $scope.races = data.Races;
+                $scope.races.unshift({ RaceName: "Choose A Race" });
+                $scope.race = $scope.races[0];
 
-            $scope.gods = data.Gods;
-            $scope.gods.unshift({ Name: "Choose A Diety" });
-            $scope.god = $scope.gods[0];
-        });
+                $scope.alignments = data.Alignments;
+                $scope.alignments.unshift({ Alignment_Name: "Choose An Alignment" });
+                $scope.alignment = $scope.alignments[0];
+
+                $scope.gods = data.Gods;
+                $scope.gods.unshift({ Name: "Choose A Diety" });
+                $scope.god = $scope.gods[0];
+            });
     }
 
     init();

@@ -15,56 +15,56 @@
 
                 <tr>
                     <td>STR</td>
-                    <td><input class="statsLabel" type="text" ng-model="str.score" ng-change="UpdateStat(str)" /></td>
-                    <td><label class="statsLabel">{{str.bonus}}</label></td>
-                    <td><label class="statsLabel">{{str.racialMod}}</label></td>
-                    <td><label class="statsLabel">{{str.total}}</label></td>
-                    <td><label class="statsLabel">{{str.points}}</label></td>
+                    <td><input class="statsLabel" type="text" ng-model="stats.str.score" ng-change="UpdateStat(stats.str)" /></td>
+                    <td><label class="statsLabel">{{stats.str.bonus}}</label></td>
+                    <td><label class="statsLabel">{{stats.str.racialMod}}</label></td>
+                    <td><label class="statsLabel">{{stats.str.total}}</label></td>
+                    <td><label class="statsLabel">{{stats.str.points}}</label></td>
                 </tr>
 
                 <tr>
                     <td>DEX</td>
-                    <td><input class="statsLabel" type="text" ng-model="dex.score" ng-change="UpdateStat(dex)" /></td>
-                    <td><label class="statsLabel">{{dex.bonus}}</label></td>
-                    <td><label class="statsLabel">{{dex.racialMod}}</label></td>
-                    <td><label class="statsLabel">{{dex.total}}</label></td>
-                    <td><label class="statsLabel">{{dex.points}}</label></td>
+                    <td><input class="statsLabel" type="text" ng-model="stats.dex.score" ng-change="UpdateStat(stats.dex)" /></td>
+                    <td><label class="statsLabel">{{stats.dex.bonus}}</label></td>
+                    <td><label class="statsLabel">{{stats.dex.racialMod}}</label></td>
+                    <td><label class="statsLabel">{{stats.dex.total}}</label></td>
+                    <td><label class="statsLabel">{{stats.dex.points}}</label></td>
                 </tr>
 
                 <tr>
                     <td>CON</td>
-                    <td><input class="statsLabel" type="text" ng-model="con.score" ng-change="UpdateStat(con)" /></td>
-                    <td><label class="statsLabel">{{con.bonus}}</label></td>
-                    <td><label class="statsLabel">{{con.racialMod}}</label></td>
-                    <td><label class="statsLabel">{{con.total}}</label></td>
-                    <td><label class="statsLabel">{{con.points}}</label></td>
+                    <td><input class="statsLabel" type="text" ng-model="stats.con.score" ng-change="UpdateStat(stats.con)" /></td>
+                    <td><label class="statsLabel">{{stats.con.bonus}}</label></td>
+                    <td><label class="statsLabel">{{stats.con.racialMod}}</label></td>
+                    <td><label class="statsLabel">{{stats.con.total}}</label></td>
+                    <td><label class="statsLabel">{{stats.con.points}}</label></td>
                 </tr>
 
                 <tr>
                     <td>INT</td>
-                    <td><input class="statsLabel" type="text" ng-model="int.score" ng-change="UpdateStat(int)" /></td>
-                    <td><label class="statsLabel">{{int.bonus}}</label></td>
-                    <td><label class="statsLabel">{{int.racialMod}}</label></td>
-                    <td><label class="statsLabel">{{int.total}}</label></td>
-                    <td><label class="statsLabel">{{int.points}}</label></td>
+                    <td><input class="statsLabel" type="text" ng-model="stats.int.score" ng-change="UpdateStat(stats.int)" /></td>
+                    <td><label class="statsLabel">{{stats.int.bonus}}</label></td>
+                    <td><label class="statsLabel">{{stats.int.racialMod}}</label></td>
+                    <td><label class="statsLabel">{{stats.int.total}}</label></td>
+                    <td><label class="statsLabel">{{stats.int.points}}</label></td>
                 </tr>
 
                 <tr>
                     <td>WIS</td>
-                    <td><input class="statsLabel" type="text" ng-model="wis.score" ng-change="UpdateStat(wis)" /></td>
-                    <td><label class="statsLabel">{{wis.bonus}}</label></td>
-                    <td><label class="statsLabel">{{wis.racialMod}}</label></td>
-                    <td><label class="statsLabel">{{wis.total}}</label></td>
-                    <td><label class="statsLabel">{{wis.points}}</label></td>
+                    <td><input class="statsLabel" type="text" ng-model="stats.wis.score" ng-change="UpdateStat(stats.wis)" /></td>
+                    <td><label class="statsLabel">{{stats.wis.bonus}}</label></td>
+                    <td><label class="statsLabel">{{stats.wis.racialMod}}</label></td>
+                    <td><label class="statsLabel">{{stats.wis.total}}</label></td>
+                    <td><label class="statsLabel">{{stats.wis.points}}</label></td>
                 </tr>
 
                 <tr>
                     <td>CHA</td>
-                    <td><input class="statsLabel" type="text" ng-model="cha.score" ng-change="UpdateStat(cha)" /></td>
-                    <td><label class="statsLabel">{{cha.bonus}}</label></td>
-                    <td><label class="statsLabel">{{cha.racialMod}}</label></td>
-                    <td><label class="statsLabel">{{cha.total}}</label></td>
-                    <td><label class="statsLabel">{{cha.points}}</label></td>
+                    <td><input class="statsLabel" type="text" ng-model="stats.cha.score" ng-change="UpdateStat(stats.cha)" /></td>
+                    <td><label class="statsLabel">{{stats.cha.bonus}}</label></td>
+                    <td><label class="statsLabel">{{stats.cha.racialMod}}</label></td>
+                    <td><label class="statsLabel">{{stats.cha.total}}</label></td>
+                    <td><label class="statsLabel">{{stats.cha.points}}</label></td>
                 </tr>
 
                 <tr>
@@ -75,20 +75,19 @@
         </div>
 
         <div class="col-md-5" id="demographic">
-            <label>Player Name</label><input type="text" ng-model="playerName">
-            <label>Character Name</label><input type="text" ng-model="characterName">
-            <label>Age</label><input type="text" ng-model="age">
-
-            <label>Gender</label>
-            <select ng-model="gender" ng-options="gender for gender in genders">
-            </select>
-
-            <label>Height</label><input type="text" ng-model="height">
-            <label>Weight</label><input type="text" ng-model="weight">
-            <label>Eyes</label><input type="text" ng-model="Eyes">
-            <label>Hair</label><input type="text" ng-model="hair">
-            <label>Skin</label><input type="text" ng-model="skin">
-            <label>Wealth</label><input type="text" ng-model="wealth">
+            <span class="row"><label>Player Name</label><input class="pull-right" type="text" ng-model="playerName"></span>
+            <span class="row"><label>Character Name</label><input class="pull-right" type="text" ng-model="characterName"></span>
+            <span class="row"><label>Age</label><input class="pull-right" type="text" ng-model="age"></span>
+            <span class="row">
+                <label>Gender</label>
+                <select class="dropdown-menu-right" ng-model="gender" ng-options="gender for gender in genders"></select>
+            </span>
+            <span class="row"><label>Height</label><input class="pull-right" type="text" ng-model="height"></span>
+            <span class="row"><label>Weight</label><input class="pull-right" type="text" ng-model="weight"></span>
+            <span class="row"><label>Eyes</label><input class="pull-right" type="text" ng-model="eyes"></span>
+            <span class="row"><label>Hair</label><input class="pull-right" type="text" ng-model="hair"></span>
+            <span class="row"><label>Skin</label><input class="pull-right" type="text" ng-model="skin"></span>
+            <span class="row"><label>Wealth</label><input class="pull-right" type="text" ng-model="wealth"></span>
         </div>
 
         <div class="col-md-2" id="race">

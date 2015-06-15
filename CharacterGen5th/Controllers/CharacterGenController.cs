@@ -78,6 +78,11 @@ namespace CharacterGen5th.Controllers
             return View("Feats");
         }
 
+        public ActionResult Traits()
+        {
+            return View("Traits");
+        }
+
         // GET: /CharacterGen/DemographicInit
         public ActionResult DemographicInit()
         {

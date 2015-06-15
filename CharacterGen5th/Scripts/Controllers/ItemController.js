@@ -7,8 +7,6 @@ item.controller("itemController", function ($scope, $http) {
         $http.get("/CharacterGen/CharacterGen/ItemInit")
             .success(function (data)
             {
-                console.log(data);
-
                 $scope.armors = data.Armors;
                 $scope.armors.unshift({ Name: "Choose Your Armor" });
                 

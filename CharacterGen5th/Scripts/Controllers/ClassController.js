@@ -16,7 +16,6 @@ Class.controller('classController', function ($scope, $http)
         $http.get("/CharacterGen/CharacterGen/ClassInit")
             .success(function (data)
             {
-                console.log(data);
                 $scope.classes = data.Classes;
                 $scope.classes.unshift
                 ({
