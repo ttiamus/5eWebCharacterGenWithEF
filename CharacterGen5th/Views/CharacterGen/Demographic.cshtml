@@ -2,85 +2,82 @@
 <html>
 <body ng-app="demographic">
     <div ng-controller="demographicController">
-        <div class="col-md-3" id="scores">
-            <table id="scoreTable" style="width:100%">
-                <tr>
-                    <td class="width5Percent"></td>
-                    <td class="width10Percent">Base Score</td>
-                    <td class="width19Percent">Bonus</td>
-                    <td class="width19Percent">Racial Mod</td>
-                    <td class="width19Percent">Total</td>
-                    <td class="width19Percent">Points</td>
-                </tr>
+        <div class="col-lg-5" id="scores">
+            <span class="row">
+                <label class="col-lg-1"></label>
+                <label class="col-lg-2">Base Score</label>
+                <label class="col-lg-2">Bonus</label>
+                <label class="col-lg-2">Racial Mod</label>
+                <label class="col-lg-2">Total</label>
+                <label class="col-lg-2">Points</label>
+            </span>
 
-                <tr>
-                    <td>STR</td>
-                    <td><input class="statsLabel" type="text" ng-model="stats.str.score" ng-change="UpdateStat(stats.str)" /></td>
-                    <td><label class="statsLabel">{{stats.str.bonus}}</label></td>
-                    <td><label class="statsLabel">{{stats.str.racialMod}}</label></td>
-                    <td><label class="statsLabel">{{stats.str.total}}</label></td>
-                    <td><label class="statsLabel">{{stats.str.points}}</label></td>
-                </tr>
+            <span class="row">
+                <label class="col-lg-1">STR</label>
+                <input class="col-lg-2" type="text" ng-model="stats.str.score" ng-change="UpdateStat(stats.str)" />
+                <label class="col-lg-2">{{stats.str.bonus}}</label>
+                <label class="col-lg-2">{{stats.str.racialMod}}</label>
+                <label class="col-lg-2">{{stats.str.total}}</label>
+                <label class="col-lg-2">{{stats.str.points}}</label>
+            </span>
 
-                <tr>
-                    <td>DEX</td>
-                    <td><input class="statsLabel" type="text" ng-model="stats.dex.score" ng-change="UpdateStat(stats.dex)" /></td>
-                    <td><label class="statsLabel">{{stats.dex.bonus}}</label></td>
-                    <td><label class="statsLabel">{{stats.dex.racialMod}}</label></td>
-                    <td><label class="statsLabel">{{stats.dex.total}}</label></td>
-                    <td><label class="statsLabel">{{stats.dex.points}}</label></td>
-                </tr>
+            <span class="row">
+                <label class="col-lg-1">DEX</label>
+                <input class="col-lg-2" type="text" ng-model="stats.dex.score" ng-change="UpdateStat(stats.dex)" />
+                <label class="col-lg-2">{{stats.dex.bonus}}</label>
+                <label class="col-lg-2">{{stats.dex.racialMod}}</label>
+                <label class="col-lg-2">{{stats.dex.total}}</label>
+                <label class="col-lg-2">{{stats.dex.points}}</label>
+            </span>
 
-                <tr>
-                    <td>CON</td>
-                    <td><input class="statsLabel" type="text" ng-model="stats.con.score" ng-change="UpdateStat(stats.con)" /></td>
-                    <td><label class="statsLabel">{{stats.con.bonus}}</label></td>
-                    <td><label class="statsLabel">{{stats.con.racialMod}}</label></td>
-                    <td><label class="statsLabel">{{stats.con.total}}</label></td>
-                    <td><label class="statsLabel">{{stats.con.points}}</label></td>
-                </tr>
+            <span class="row">
+                <label class="col-lg-1">CON</label>
+                <input class="col-lg-2" type="text" ng-model="stats.con.score" ng-change="UpdateStat(stats.con)" />
+                <label class="col-lg-2">{{stats.con.bonus}}</label>
+                <label class="col-lg-2">{{stats.con.racialMod}}</label>
+                <label class="col-lg-2">{{stats.con.total}}</label>
+                <label class="col-lg-2">{{stats.con.points}}</label>
+            </span>
 
-                <tr>
-                    <td>INT</td>
-                    <td><input class="statsLabel" type="text" ng-model="stats.int.score" ng-change="UpdateStat(stats.int)" /></td>
-                    <td><label class="statsLabel">{{stats.int.bonus}}</label></td>
-                    <td><label class="statsLabel">{{stats.int.racialMod}}</label></td>
-                    <td><label class="statsLabel">{{stats.int.total}}</label></td>
-                    <td><label class="statsLabel">{{stats.int.points}}</label></td>
-                </tr>
+            <span class="row">
+                <label class="col-lg-1">INT</label>
+                <input class="col-lg-2" type="text" ng-model="stats.int.score" ng-change="UpdateStat(stats.int)" />
+                <label class="col-lg-2">{{stats.int.bonus}}</label>
+                <label class="col-lg-2">{{stats.int.racialMod}}</label>
+                <label class="col-lg-2">{{stats.int.total}}</label>
+                <label class="col-lg-2">{{stats.int.points}}</label>
+            </span>
 
-                <tr>
-                    <td>WIS</td>
-                    <td><input class="statsLabel" type="text" ng-model="stats.wis.score" ng-change="UpdateStat(stats.wis)" /></td>
-                    <td><label class="statsLabel">{{stats.wis.bonus}}</label></td>
-                    <td><label class="statsLabel">{{stats.wis.racialMod}}</label></td>
-                    <td><label class="statsLabel">{{stats.wis.total}}</label></td>
-                    <td><label class="statsLabel">{{stats.wis.points}}</label></td>
-                </tr>
+            <span class="row">
+                <label class="col-lg-1">WIS</label>
+                <input class="col-lg-2" type="text" ng-model="stats.wis.score" ng-change="UpdateStat(stats.wis)" />
+                <label class="col-lg-2">{{stats.wis.bonus}}</label>
+                <label class="col-lg-2">{{stats.wis.racialMod}}</label>
+                <label class="col-lg-2">{{stats.wis.total}}</label>
+                <label class="col-lg-2">{{stats.wis.points}}</label>
+            </span>
 
-                <tr>
-                    <td>CHA</td>
-                    <td><input class="statsLabel" type="text" ng-model="stats.cha.score" ng-change="UpdateStat(stats.cha)" /></td>
-                    <td><label class="statsLabel">{{stats.cha.bonus}}</label></td>
-                    <td><label class="statsLabel">{{stats.cha.racialMod}}</label></td>
-                    <td><label class="statsLabel">{{stats.cha.total}}</label></td>
-                    <td><label class="statsLabel">{{stats.cha.points}}</label></td>
-                </tr>
+            <span class="row">
+                <label class="col-lg-1">CHA</label>
+                <input class="col-lg-2" type="text" ng-model="stats.cha.score" ng-change="UpdateStat(stats.cha)" />
+                <label class="col-lg-2">{{stats.cha.bonus}}</label>
+                <label class="col-lg-2">{{stats.cha.racialMod}}</label>
+                <label class="col-lg-2">{{stats.cha.total}}</label>
+                <label class="col-lg-2">{{stats.cha.points}}</label>
+            </span>
 
-                <tr>
-                    <td colspan="5"></td>
-                    <td><label class="statsLabel" ng-model="pointBuyTotal">{{pointsRemaining}}</label></td>
-                </tr>
-            </table>
+            <span class="row">
+                <label class="pull-right" ng-model="pointBuyTotal">{{pointsRemaining}}</label>
+            </span>
         </div>
 
-        <div class="col-md-5" id="demographic">
+        <div class="col-lg-2" id="demographic">
             <span class="row"><label>Player Name</label><input class="pull-right" type="text" ng-model="playerName"></span>
             <span class="row"><label>Character Name</label><input class="pull-right" type="text" ng-model="characterName"></span>
             <span class="row"><label>Age</label><input class="pull-right" type="text" ng-model="age"></span>
             <span class="row">
                 <label>Gender</label>
-                <select class="dropdown-menu-right" ng-model="gender" ng-options="gender for gender in genders"></select>
+                <select ng-model="gender" ng-options="gender for gender in genders"></select>
             </span>
             <span class="row"><label>Height</label><input class="pull-right" type="text" ng-model="height"></span>
             <span class="row"><label>Weight</label><input class="pull-right" type="text" ng-model="weight"></span>
@@ -90,40 +87,36 @@
             <span class="row"><label>Wealth</label><input class="pull-right" type="text" ng-model="wealth"></span>
         </div>
 
-        <div class="col-md-2" id="race">
-            <span>
+        <div class="col-lg-2" id="race">
+            <span class="row">
                 <label>Race</label>
-                <select ng-model="race" ng-options="race.RaceName for race in races"></select>
+                <select class="pull-right" ng-model="race" ng-options="race.RaceName for race in races"></select>
             </span>
+            <div>
+                <span class="row">
+                    <label>Alignment</label>
+                    <select class="pull-right" ng-model="alignment" ng-change="UpdateAvailableGods(alignment.Alignment_Id)" ng-options="alignment.Alignment_Name for alignment in alignments"></select>
+                </span>
+                <span class="row">
+                    <label>Diety</label>
+                    <select class="pull-right" ng-model="god" ng-options="god.Name for god in gods"></select>
+                </span>
+            </div>
         </div>
 
-        <div class="col-md-2" id="alignment">
-            <span>
-                <label>Alignment</label>
-                <select ng-model="alignment" ng-change="UpdateAvailableGods(alignment.Alignment_Id)" ng-options="alignment.Alignment_Name for alignment in alignments"></select>
-            </span>
-            <br/>
-            <span>
-                <label>Diety</label>
-                <select ng-model="god" ng-options="god.Name for god in gods"></select>
-            </span>
+        <div class="col-lg-1" id="RaceSummary">
+            <label>Name: {{race.RaceName}}</label> <br />
+            <label>Size: {{race.Size.SizeName}}</label> <br />
+            <label>Speed: {{race.Speed}}</label> <br />
+            <label>Properties: {{race.RaceProperties}}</label> <br />
         </div>
 
-        <div class="float-right">
-            <div id="RaceSummary">
-                <label>Name: {{race.RaceName}}</label> <br />
-                <label>Size: {{race.Size}}</label> <br />
-                <label>Speed: {{race.Speed}}</label> <br />
-                <label>Properties: {{race.RaceProperties}}</label> <br />
-            </div>
-
-            <div id="GodSummary">
-                <label>Name: {{god.Name}}</label> <br/>
-                <label>Title: {{god.Title}}</label> <br />
-                <label>Symbol: {{god.Symbol}}</label> <br />
-                <label>Alignment: {{god.Alignment}}</label> <br />
-                <label>Domains: {{god.Domains}}</label> <br />
-            </div>
+        <div class="col-lg-2" id="GodSummary">
+            <label>Name: {{god.Name}}</label> <br/>
+            <label>Title: {{god.Title}}</label> <br />
+            <label>Symbol: {{god.Symbol}}</label> <br />
+            <label>Alignment: {{god.Alignment}}</label> <br />
+            <label>Domains: {{god.Domains}}</label> <br />
         </div>
     </div>
 </body>

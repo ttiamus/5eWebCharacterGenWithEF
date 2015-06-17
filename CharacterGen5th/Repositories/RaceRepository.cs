@@ -16,7 +16,7 @@ namespace CharacterGen5th.Repositories
 
         public IEnumerable<Race> GetRaces()
         {
-            return this.context.Races.ToList();
+            return this.context.Races.Include(x => x.Size).ToList();
         }
 
         public void CreateRace(Race newRace)

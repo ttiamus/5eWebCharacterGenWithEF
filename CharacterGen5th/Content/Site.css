@@ -536,6 +536,12 @@ td > input[type="text"] {
 {
     font-size:22px;
 }
+*/
+
+input 
+{
+    max-width: 100%;
+} 
 
 .width5Percent
 {
@@ -550,4 +556,4 @@ td > input[type="text"] {
 .width19Percent
 {
     width:19%;
-}*/
+}

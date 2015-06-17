@@ -10,7 +10,6 @@ namespace CharacterGen5th.Models
     {
         public CharGenContext()
         {
-
         }
 
         public DbSet<AbilityScore> AbilityScores { get; set; }

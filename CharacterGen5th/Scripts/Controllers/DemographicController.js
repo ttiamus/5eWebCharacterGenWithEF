@@ -89,6 +89,8 @@ demographic.controller("demographicController", function ($scope, $http)
         $http.get("/CharacterGen/CharacterGen/DemographicInit")
         .success(function (data)
             {
+                console.log(data);
+
                 $scope.stats = [];
 
                 $scope.stats.str = 
@@ -144,7 +146,7 @@ demographic.controller("demographicController", function ($scope, $http)
                 $scope.skin = data.Skin;
                 $scope.wealth = data.Wealth;
 
-                if(data.male === true)
+                if(data.male == true)
                 {
                     $scope.gender = $scope.genders[0];
                 }
